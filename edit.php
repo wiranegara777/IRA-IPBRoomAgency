@@ -8,12 +8,13 @@ $crud = new Crud();
 $id = $crud->escape_string($_GET['id']);
  
 //selecting data associated with this particular id
-$result = $crud->getData("SELECT * FROM users WHERE id=$id");
+$result = $crud->getData("SELECT * FROM user WHERE id=$id");
  
 foreach ($result as $res) {
     $name = $res['name'];
-    $age = $res['age'];
+    $nim = $res['nim'];
     $email = $res['email'];
+    $departemen = $res['departemen'];
 }
 ?>
 <html>
@@ -32,12 +33,16 @@ foreach ($result as $res) {
                 <td><input type="text" name="name" value="<?php echo $name;?>"></td>
             </tr>
             <tr> 
-                <td>Age</td>
-                <td><input type="text" name="age" value="<?php echo $age;?>"></td>
+                <td>Nim</td>
+                <td><input type="text" name="nim" value="<?php echo $nim;?>"></td>
             </tr>
             <tr> 
                 <td>Email</td>
                 <td><input type="text" name="email" value="<?php echo $email;?>"></td>
+            </tr>
+             <tr> 
+                <td>Departemen</td>
+                <td><input type="text" name="departemen" value="<?php echo $departemen;?>"></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>

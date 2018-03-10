@@ -2,13 +2,18 @@
 session_start();
 //including the database connection file
 include_once("classes/Crud.php");
+include_once("classes/Mahasiswa.php");
+
+
 if(isset($_SESSION['name'])) {
-  echo "Your session is running " . $_SESSION['name'];
+ // echo "Your session is running " . $_SESSION['name'];
+     $Mahasiswa = new Mahasiswa($_SESSION['id'],$_SESSION['name'],$_SESSION['email'],$_SESSION['phone'],$_SESSION['departemen'],$_SESSION['nim']);
+     echo "Your session is running " . $Mahasiswa->getDepartemen();
 }
 $crud = new Crud();
  
 //fetching data in descending order (lastest entry first)
-$query = "SELECT * FROM users ORDER BY id DESC";
+$query = "SELECT * FROM user ORDER BY id DESC";
 $result = $crud->getData($query);
 //echo '<pre>'; print_r($result); exit;
 ?>
@@ -34,7 +39,7 @@ $result = $crud->getData($query);
     while($res = mysqli_fetch_array($result)) {         
         echo "<tr>";
         echo "<td>".$res['name']."</td>";
-        echo "<td>".$res['age']."</td>";
+        echo "<td>".$res['nim']."</td>";
         echo "<td>".$res['email']."</td>";    
         echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
     }

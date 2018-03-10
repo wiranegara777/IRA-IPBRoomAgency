@@ -2,6 +2,7 @@
 session_start();
 include_once("Crud.php");
 include_once("Validation.php");
+include_once("Mahasiswa.php");
 
 $crud = new Crud();
 $validation = new Validation();
@@ -28,7 +29,13 @@ if(isset($_POST['Submit'])){
             
             $_SESSION['id'] = $res['id'];
             $_SESSION['name'] = $res['name'];
-                
+            $_SESSION['email'] = $res['email'];
+            $_SESSION['phone'] = $res['phone'];
+            $_SESSION['departemen'] = $res['departemen'];
+            $_SESSION['nim'] = $res['nim'];
+            
+           // $Mahasiswa = new Mahasiswa($res['id'],$res['name'],$res['email'],$res['phone'],$res['departemen'],$res['nim']);
+
              ?>
              <script language="javascript">alert("Login Successful");</script>
              <script>document.location.href='../index.php';</script>

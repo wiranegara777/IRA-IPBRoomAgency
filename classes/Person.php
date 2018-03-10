@@ -2,10 +2,10 @@
 
 	class Person {
 
-		public $id;
-		public $name;
-		public $email;
-		public $phone;
+		protected $id;
+		protected $name;
+		protected $email;
+		protected $phone;
 
 		public function setName($name){
 			$this->name = $name;
