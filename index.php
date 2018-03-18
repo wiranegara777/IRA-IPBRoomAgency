@@ -5,10 +5,13 @@ include_once("classes/Crud.php");
 include_once("classes/Mahasiswa.php");
 
 
-if(isset($_SESSION['name'])) {
+if(isset($_SESSION['departemen'])) {
  // echo "Your session is running " . $_SESSION['name'];
      $Mahasiswa = new Mahasiswa($_SESSION['id'],$_SESSION['name'],$_SESSION['email'],$_SESSION['phone'],$_SESSION['departemen'],$_SESSION['nim']);
-     echo "Your session is running " . $Mahasiswa->getDepartemen();
+     echo "Your session is running " . $Mahasiswa->getName();
+}else{
+    echo '<script language="javascript">alert("Please Login First");</script>'; 
+    echo '<script>document.location.href="login.html";</script>';
 }
 $crud = new Crud();
  
@@ -45,6 +48,6 @@ $result = $crud->getData($query);
     }
     ?>
     </table>
-    <a href="classes/logout.php">keluar</a>
+    <a href="proses/logout.php">keluar</a>
 </body>
 </html>

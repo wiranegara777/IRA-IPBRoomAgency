@@ -1,14 +1,22 @@
 <html>
 <head>
-    <title>Log In</title>
+    <title>Sign Up</title>
 </head>
  
 <body>
     <a href="index.php">Home</a>
     <br/><br/>
  
-    <form action="proses/LoginProcess.php" method="post" name="form1">
+    <form action="proses/signUp.php" method="post" name="form1">
         <table width="25%" border="0">
+            <tr> 
+                <td>Name</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr> 
+                <td>Nim</td>
+                <td><input type="text" name="nim"></td>
+            </tr>
             <tr> 
                 <td>Email</td>
                 <td><input type="email" name="email"></td>
@@ -17,7 +25,10 @@
                 <td>Password</td>
                 <td><input type="password" name="password"></td>
             </tr>
-        
+            <tr> 
+                <td>Departemen</td>
+                <td><input type="text" name="departemen"></td>
+            </tr>
             <tr> 
                 <td></td>
                 <td><input type="submit" name="Submit" value="Add"></td>
