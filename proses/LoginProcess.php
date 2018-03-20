@@ -22,8 +22,10 @@ if(isset($_POST['Submit'])){
         // if all the fields are filled (not empty) 
             
         //insert data to database  
-        $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";  
-        if($query == TRUE){
+        $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
+        $query2 = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";  
+        $result2 = $crud->getData($query2);
+        if($result2->num_rows > 0){
             $admin=0;
             $result  = $crud->getData($query);
             $res = mysqli_fetch_array($result);
