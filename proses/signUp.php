@@ -53,9 +53,9 @@ if(isset($_POST['Submit'])) {
           $mail->Host = "smtp.gmail.com";
           $mail->IsHTML(true);
           $mail->Port = 587; //465; // or 587
-          $mail->Username = "muhammadwiranegara777@gmail.com";
-          $mail->Password = "superman777";
-          $mail->setFrom('muhammadwiranegara777@gmail.com', 'IPB Room Agency, Ltd');
+          $mail->Username = "ipbroomagency@gmail.com";
+          $mail->Password = "qwerty1p8";
+          $mail->setFrom('ipbira@gmail.com', 'IPB Room Agency, Ltd');
 
           //ini buat offline 
           $mail->smtpConnect(
