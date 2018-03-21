@@ -12,14 +12,14 @@
         $this->phone = $phone;
     }
 		
-	public function insertPj($name,$nim,$email,$password){
+	public function insertPj($name,$email,$phone,$password){
 		$crud = new Crud();
-		$result = $crud->execute("INSERT INTO user(name,email,password,level) VALUES('$name','$email','$password',3)");
+		$result = $crud->execute("INSERT INTO user(name,email,password,level) VALUES('$name','$email','$phone','$password',3)");
 
 		return $result;
 	}
 
-	public function updatePj($id, $name,$nim,$email){
+	public function updatePj($id, $name,$email,$phone){
 		$crud = new Crud();
 		$result = $crud->execute("UPDATE user SET name='$name',email='$email' WHERE id=$id");
         
