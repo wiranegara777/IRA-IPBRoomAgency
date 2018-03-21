@@ -175,27 +175,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div>
   <hr>
-  <div class="w3-container">
-    <h5>General Stats</h5>
-    <p>New Visitors</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">+25%</div>
-    </div>
-
-    <p>New Users</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
-    </div>
-
-    <p>Bounce Rate</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
-    </div>
-  </div>
-  <hr>
-
-  <div class="w3-container">
-    <h5>Countries</h5>
+  <div class="w3-padding">
+    <h5>User</h5>
     <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
       <?php 
             while($res = mysqli_fetch_array($result)) {         
@@ -207,8 +188,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           }
       ?>
     </table><br>
-    <button class="w3-button w3-dark-grey">More Countries  <i class="fa fa-arrow-right"></i></button>
+    <a href="addRoom.php"><button class="w3-button w3-blue">Add PJ Ruang <i class="fa fa-plus"></i></button></a>
   </div>
+ </div>
   <hr>
   <div class="w3-container">
     <h5>Recent Users</h5>

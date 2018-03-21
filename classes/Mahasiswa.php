@@ -1,6 +1,6 @@
 <?php 
 	include_once 'Person.php';
-	include_once("classes/Crud.php");
+	include_once("Crud.php");
 	
 
 	class Mahasiswa extends Person {

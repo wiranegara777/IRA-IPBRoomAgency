@@ -33,6 +33,17 @@
 		return $result;
 	}
 
+	//insert Room
+
+	public function insertRoom($title,$body,$image,$id_user,$lat,$long,$address){
+		$crud = new Crud();
+		$result = $crud->execute("INSERT INTO room
+                  (id_user,title,body,address,image,lat,lng)
+                         VALUES('$id_user','$title','$body','$address','img/$image','$lat','$long')");
+
+		return $result;
+	}
+
 }
 
 
