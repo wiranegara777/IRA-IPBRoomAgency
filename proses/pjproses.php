@@ -11,10 +11,12 @@
         session_start();
         include_once("../classes/Crud.php");
         include_once("../classes/Validation.php");
-        include_once("../classes/Admin.php");
+     //   include_once("../classes/Admin.php");
+        include_once("../classes/Pj.php");
 
-        $admin = new Admin($_SESSION['id'],$_SESSION['name'],$_SESSION['email'],$_SESSION['phone']);
+       // $admin = new Admin($_SESSION['id'],$_SESSION['name'],$_SESSION['email'],$_SESSION['phone']);
         $crud = new Crud();
+        $pj = new Pj('');
         $validation = new Validation();
 
         if(isset($_POST['Submit'])){
@@ -36,7 +38,7 @@
                 echo 'Please provide proper email.';
             }
             else{
-               $query = $admin -> insertPj($name, $email, $phone, $password);
+               $pj -> insertPj($name, $email, $phone, $password);
                 echo "<script>alert('Berhasil mendaftar sebagai PJ Ruangan !.');
                 document.location.href='../login.html';</script>";
 

@@ -1,6 +1,8 @@
 <?php 
     include_once("../classes/Crud.php");
     include_once("../classes/Admin.php");
+    include_once "../classes/Room.php";
+
     session_start();
     if(isset($_SESSION['name'])) {
         $admin = new Admin($_SESSION['id'],$_SESSION['name'],$_SESSION['email'],$_SESSION['phone']);
@@ -11,6 +13,7 @@
        echo '<script>document.location.href="../login.html";</script>';
    }
    $crud = new Crud();
+   $room = new Room();
 ?>
 <?php
     if(isset($_POST['submit'])){
@@ -41,9 +44,8 @@
         //   $query = "INSERT INTO post
         //               (title,body,category,image,user_id,total_rating,validation,langtitude,longtitude,alamat,tanggal,bulan,tahun,date_finish,month_finish,year_finish)
         //                 VALUES('$title','$body', '$category','images/$image','$id_user','0','0','$lat','$long','$address','$tanggal','$bulan','$tahun','$tanggal2','$bulan2','$tahun2')";
-         $query = $admin->insertRoom($title,$body,$image,$id_user,$lat,$long,$address);
-         //$query = $crud->execute("INSERT INTO room (id_user,title,body,address,image,lat,lng) VALUES('$id_user','$title','$body','$address','img/$image','$lat','$long')");
-        //  $insert_row = $db->insert($query);
+         $query = $room->insertRoom($title,$body,$image,$id_user,$lat,$long,$address);
+          
             }
       if($tipe_image == "image/jpeg" || $tipe_image == "image/png"){
           if($foto_size < 1000000) {
