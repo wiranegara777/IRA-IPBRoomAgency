@@ -13,10 +13,10 @@
         protected $lng;
         
         //constructor
-        public function __construct($id_room){
+        public function Room($id_room){
             if($id_room != NULL){
                 $crud = new Crud();
-                $query = $crud->execute("SELECT * FROM room where id_room = '$id_room'");
+                $query = $crud->getData("SELECT * FROM room where id_room = '$id_room'");
                 $result = mysqli_fetch_assoc($query);
                 
                 $this->id_room = $result['id_room'];
@@ -76,10 +76,9 @@
         //insert room to database
         public function insertRoom($title,$body,$image,$id_user,$lat,$long,$address){
             $crud = new Crud();
-            $result = $crud->execute("INSERT INTO room
-                      (id_user,title,body,address,image,lat,lng)
-                             VALUES('$id_user','$title','$body','$address','img/$image','$lat','$long')");
-    
+                $result = $crud->execute("INSERT INTO room
+                          (id_user,title,body,address,image,lat,lng)
+                                 VALUES('$id_user','$title','$body','$address','img/$image','$lat','$long')");
             return $result;
         }
 

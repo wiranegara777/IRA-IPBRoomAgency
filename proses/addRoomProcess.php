@@ -13,7 +13,7 @@
        echo '<script>document.location.href="../login.html";</script>';
    }
    $crud = new Crud();
-   $room = new Room();
+   $room = new Room('');
 ?>
 <?php
     if(isset($_POST['submit'])){
