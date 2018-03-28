@@ -21,7 +21,7 @@ if(isset($_POST['Submit'])){
     else { 
         // if all the fields are filled (not empty) 
             
-        //insert data to database  
+        //get user.data from database 
         $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
         $query2 = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";  
         $result2 = $crud->getData($query2);
