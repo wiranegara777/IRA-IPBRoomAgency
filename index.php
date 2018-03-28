@@ -11,7 +11,7 @@ if(isset($_SESSION['departemen'])) {
      echo "Your session is running " . $Mahasiswa->getName();
 }else{
     echo '<script language="javascript">alert("Please Login First");</script>'; 
-    echo '<script>document.location.href="login.html";</script>';
+    echo '<script>document.location.href="login.php";</script>';
 }
 $crud = new Crud();
  

@@ -53,8 +53,8 @@ if(isset($_POST['Submit'])){
         }else
         {
             ?>
-            <script language="javascript">alert("Login Failed");</script>
-            <script>document.location.href='../login.html';</script>
+            <!-- <script language="javascript">alert("Login Failed");</script> -->
+            <script>document.location.href='../login.php?err=1';</script>
             <?php
         }
        
