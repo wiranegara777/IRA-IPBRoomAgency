@@ -8,13 +8,26 @@
 	protected $departemen;
 	protected $nim;
 
-	public function Mahasiswa($id, $name, $email, $phone, $departemen, $nim){
-	 	$this->id = $id;
-	 	$this->name = $name;
-	 	$this->email = $email;
-	 	$this->phone = $phone;
-	 	$this->departemen = $departemen;
-	 	$this->nim = $nim;
+	public function Mahasiswa($id_mahasiswa){
+		if($id_mahasiswa != NULL){
+			$crud = new Crud();
+            $query = $crud->getData("SELECT * FROM user where id = '$id_mahasiswa'");
+			$result = mysqli_fetch_assoc($query);
+			
+			$this->id = $result['id'];
+			$this->name = $result['name'];
+			$this->email = $result['email'];
+			$this->phone = $result['phone'];
+			$this->departemen = $result['departemen'];
+			$this->nim = $result['nim'];
+		}else{
+			$this->id = '';
+			$this->name = '';
+			$this->email = '';
+			$this->phone = '';
+			$this->departemen = '';
+			$this->nim = '';
+		}
 	 }
 	
 	public function setDepartemen($departemen){
