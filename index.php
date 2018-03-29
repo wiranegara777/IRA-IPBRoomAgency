@@ -19,9 +19,6 @@ $crud = new Crud();
 $query = "SELECT * FROM user ORDER BY id DESC";
 $result = $crud->getData($query);
 
-// fetching room ASC order
-$query = "SELECT * FROM room ORDER BY id_room ASC";
-$result2 = $crud->getData($query);
 ?>
  
 <html lang="en">
@@ -31,7 +28,6 @@ $result2 = $crud->getData($query);
  
 <body>
 <a href="add.html">Add New Data</a><br/><br/>
-    
     <table width='80%' border=0>
  
     <tr bgcolor='#CCCCCC'>
@@ -51,28 +47,8 @@ $result2 = $crud->getData($query);
     }
     ?>
     </table>
-    </br></br>
-    <h2>Room Avaiable</h2>
-    <table width='80%' border=0>
- 
-    <tr bgcolor='#CCCCCC'>
-        <td>title</td>
-        <td>Description</td>
-        <td>address</td>
-        <td>Image</td>
-    </tr>
-    <?php 
-  //  foreach ($result as $key => $res) {
-    while($res = mysqli_fetch_array($result2)) {         
-        echo "<tr>";
-        echo "<td>".$res['title']."</td>";
-        echo "<td>".$res['body']."</td>";
-        echo "<td>".$res['address']."</td>";
-        echo "<td><img style='height:50px;' src='".$res['image']."'></td>";       
-        //echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
-    }
-    ?>
-    </table>
+    <div id ="ulang"></div>
+
     <a href="proses/logout.php">keluar</a>
 </body>
 
@@ -90,5 +66,16 @@ $result2 = $crud->getData($query);
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
 </script>
+
+<!-- jquery to refresh every second -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">// <![CDATA[
+    $(document).ready(function() {
+        $.ajaxSetup({ cache: false }); // This part addresses an IE bug. without it, IE will only load the first number and will never refresh
+        setInterval(function() {
+            $('#ulang').load('tesup.php');
+        }, 1000); // the "3000" here refers to the time to refresh the div. it is in milliseconds.
+});
+// ]]></script>
 
 </html>
