@@ -11,7 +11,8 @@
         protected $image;
         protected $lat;
         protected $lng;
-        
+        protected $price;
+
         //constructor
         public function Room($id_room){
             if($id_room != NULL){
@@ -27,6 +28,7 @@
                 $this->image = $result['image'];
                 $this->lat = $result['lat'];
                 $this->lng = $result['lng'];
+                $this->price = $result['price'];
 
             } else {
                 $this->id_room = NULL;
@@ -37,6 +39,7 @@
                 $this->image = NULL;
                 $this->lat = NULL;
                 $this->lng = NULL;
+                $this->price = NULL;
             }
         }
 
@@ -71,6 +74,10 @@
 
         public function getLng(){
             return $this->lng;
+        }
+
+        public function getPrice(){
+            return $this->price;
         }
 
         //insert room to database
