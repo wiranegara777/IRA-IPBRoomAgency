@@ -5,6 +5,7 @@
     include_once "classes/Mahasiswa.php";
     include_once "classes/Pj.php";
 
+    //get Mahasiswa
     $mahasiswa = new Mahasiswa($_SESSION['id']);
 
     $crud = new Crud();
@@ -86,20 +87,33 @@
             <p>Peminjam: <?php echo $mahasiswa->getName(); ?> </p>
             <p>PjRuang: <?php echo $pj->getName(); ?> </p>
             <p>Harga: Rp.<?php echo $room->getPrice(); ?>/day </p>
-            <form>
+            <form role="form" method="post" action="proses/order_process.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Duration</label>
-                    <input type="text" class="one form-control"  placeholder="Enter duration order">
+                    <input type="text" name="duration" class="one form-control"  placeholder="Enter duration order">
                 </div>
                 <!-- hidden -->
                 <input class="two" type="hidden" value="<?php echo $room->getPrice(); ?>">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Pick Your Order date</label>
-                    <input type="date" class="form-control" id="datepicker" placeholder="DD/MM/YYYY">
+                    <input type="date" name="date" class="form-control" id="datepicker" placeholder="DD/MM/YYYY">
+                </div>
+                <!-- metode pembayaran -->
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Payment Method</label>
+                    <select name="payment" class="form-control" id="exampleFormControlSelect1">
+                        <option value="1">BCA (Transfer)</option>
+                        <option value="2">COD (Cash on Delivery)</option>
+                    </select>
                 </div>
                 <p>Total Harga: Rp.<tag class="result"></tag></p>
+                <input type="hidden" name="price" value="<?php echo $room->getPrice(); ?>">
+                <input type="hidden" name="id_user" value="<?php echo $mahasiswa->getId(); ?>">
+                <input type="hidden" name="id_pj" value="<?php echo $pj->getId(); ?>">
+                <input type="hidden" name="id_room" value="<?php echo $room->getId_room(); ?>">
+                
                 <div class="modal-footer">
-                    <button type="submit" class="container btn btn-primary">Submit</button>
+                    <button type="submit" name="submit" class="container btn btn-primary">Submit</button>
                     <button type="button" class="container btn btn-secondary" data-dismiss="modal">Cancel</button>
                   <!-- <button type="button" class="btn btn-primary">Order This Room</button> -->
                 </div>

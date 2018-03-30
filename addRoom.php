@@ -25,6 +25,9 @@ $( function() {
 
                 <label>Location</label>
                 <input name="address" type="text" class="form-control" placeholder="Enter Address">
+                
+                <label>Price</label>
+                <input name="price" type="number" class="form-control" placeholder="200000">
 
               </br></br>
 
