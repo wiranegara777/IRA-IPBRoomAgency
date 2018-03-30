@@ -11,6 +11,7 @@
         <td>Description</td>
         <td>address</td>
         <td>Image</td>
+        <td></td>
     </tr>
     <?php
     // fetching room ASC order
@@ -22,7 +23,8 @@
         echo "<td>".$res['title']."</td>";
         echo "<td>".$res['body']."</td>";
         echo "<td>".$res['address']."</td>";
-        echo "<td><img style='height:50px;' src='".$res['image']."'></td>";       
+        echo "<td><img style='height:50px;' src='".$res['image']."'></td>";
+        echo "<td><a href='detailroom.php?id=".$res['id_room']."'><button>View</button></a></td>";       
         //echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
     }
     ?>

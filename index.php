@@ -47,6 +47,7 @@ $result = $crud->getData($query);
     }
     ?>
     </table>
+    <!-- list of dynamic room -->
     <div id ="ulang"></div>
 
     <a href="proses/logout.php">keluar</a>
@@ -74,7 +75,7 @@ $result = $crud->getData($query);
         $.ajaxSetup({ cache: false }); // This part addresses an IE bug. without it, IE will only load the first number and will never refresh
         setInterval(function() {
             $('#ulang').load('tesup.php');
-        }, 1000); // the "3000" here refers to the time to refresh the div. it is in milliseconds.
+        }, 500); // the "3000" here refers to the time to refresh the div. it is in milliseconds.
 });
 // ]]></script>
 
