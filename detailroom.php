@@ -113,8 +113,8 @@
                 <input type="hidden" name="id_room" value="<?php echo $room->getId_room(); ?>">
                 
                 <div class="modal-footer">
-                    <button type="submit" name="submit" class="container btn btn-primary">Submit</button>
-                    <button type="button" class="container btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" name="submit" class="container btn btn-primary">Order this Room</button>
+                    <!-- <button type="button" class="container btn btn-secondary" data-dismiss="modal">Cancel</button> -->
                   <!-- <button type="button" class="btn btn-primary">Order This Room</button> -->
                 </div>
             </form>

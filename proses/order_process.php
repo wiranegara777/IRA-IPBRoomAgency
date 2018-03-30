@@ -37,8 +37,9 @@
         $result = $order->insertOrder($id_user,$id_room,$id_pj,$tgl,$month,$year,$duration,$payment,$sumprice);
 
         if($result){
-                echo "<script language='javascript'>alert('Order Successful !');</script>
-                <script>document.location.href='../index.php';</script>";
+              //  echo "<script language='javascript'>alert('Order Successful !');</script>
+              //  <script>document.location.href='../index.php';</script>";
+              echo "<script>document.location.href='../checkout.php';</script>";
         }else{
                 echo "<script language='javascript'>alert('Order Failed !');</script>
                 <script>document.location.href='../index.php';</script>";
