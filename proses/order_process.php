@@ -37,9 +37,13 @@
         $result = $order->insertOrder($id_user,$id_room,$id_pj,$tgl,$month,$year,$duration,$payment,$sumprice);
 
         if($result){
-              //  echo "<script language='javascript'>alert('Order Successful !');</script>
+            //get latest order_id
+             $crud = new Crud();
+             $result2 = $crud->getData("SELECT * FROM order_room ORDER BY id_order DESC LIMIT 1");
+             $res = mysqli_fetch_assoc($result2);
+             // echo "<script language='javascript'>alert('Order Successful !');</script>
               //  <script>document.location.href='../index.php';</script>";
-              echo "<script>document.location.href='../checkout.php';</script>";
+              echo "<script>document.location.href='../checkout.php?id=".$res['id_order']."';</script>";
         }else{
                 echo "<script language='javascript'>alert('Order Failed !');</script>
                 <script>document.location.href='../index.php';</script>";

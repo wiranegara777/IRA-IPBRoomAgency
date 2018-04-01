@@ -18,7 +18,7 @@
         public function Order($id_order){
             if($id_order != NULL){
                 $crud = new Crud();
-                $query = $crud->getData("SELECT * FROM order where id_order = '$id_order'");
+                $query = $crud->getData("SELECT * FROM order_room where id_order = '$id_order'");
                 $result = mysqli_fetch_assoc($query);
 
                 $this->id_order = $result['id_order'];
@@ -68,10 +68,10 @@
         public function getDuration(){
             return $this->duration;
         }
-        public function payment(){
+        public function getPayment(){
             return $this->payment;
         }
-        public function sum_price(){
+        public function getSum_price(){
             return $this->sum_price;
         }
 
