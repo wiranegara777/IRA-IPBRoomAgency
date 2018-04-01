@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2018 at 05:00 AM
+-- Generation Time: Apr 01, 2018 at 10:49 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -47,7 +47,10 @@ CREATE TABLE `order_room` (
 
 INSERT INTO `order_room` (`id_order`, `id_room`, `id_user`, `id_pj`, `sum_price`, `duration`, `date`, `month`, `year`, `payment`) VALUES
 (1, 3, 10, 10, 18000, 3, 17, 3, 2018, 1),
-(2, 6, 10, 10, 16000, 2, 19, 3, 2018, 1);
+(2, 6, 10, 10, 16000, 2, 19, 3, 2018, 1),
+(4, 3, 3, 10, 12000, 2, 2, 4, 2018, 1),
+(5, 1, 3, 10, 4000, 2, 28, 3, 2018, 1),
+(6, 8, 3, 10, 54000, 6, 14, 4, 2018, 2);
 
 -- --------------------------------------------------------
 
@@ -142,7 +145,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `order_room`
 --
 ALTER TABLE `order_room`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `room`
