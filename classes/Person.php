@@ -6,6 +6,11 @@
 		protected $name;
 		protected $email;
 		protected $phone;
+		protected $level;
+
+		public function getLevel(){
+			return $this->level;
+		}	
 
 		public function setName($name){
 			$this->name = $name;

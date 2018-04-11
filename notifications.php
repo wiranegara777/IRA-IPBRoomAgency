@@ -13,6 +13,7 @@
 <html lang="en">
     <title>Notifications</title>
     <body>
+        <!-- <a href="message.php">Diskusi</a> -->
         <ul>
         <?php
             $query = "SELECT * from order_room where id_user = $id";

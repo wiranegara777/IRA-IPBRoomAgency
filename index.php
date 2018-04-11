@@ -4,6 +4,7 @@ session_start();
 include_once("classes/Crud.php");
 include_once("classes/Mahasiswa.php");
 include_once "classes/Room.php";
+include_once "classes/Pj.php";
 
 if(isset($_SESSION['name'])) {
  // echo "Your session is running " . $_SESSION['name'];    
@@ -57,7 +58,8 @@ $result = $crud->getData($query);
     </tr>
     <?php 
   //  foreach ($result as $key => $res) {
-    while($res = mysqli_fetch_array($result)) {         
+    while($res = mysqli_fetch_array($result)) {   
+    
         echo "<tr>";
         echo "<td>".$res['name']."</td>";
         echo "<td>".$res['nim']."</td>";

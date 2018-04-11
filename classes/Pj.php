@@ -16,12 +16,14 @@ include_once "Person.php";
                 $this->email = $result['email'];
                 //$this->password = $result['nim'];
                 $this->phone = $result['phone'];
+                $this->level = $result['level'];
             } else {
                 $this->id = NULL;
                 $this->name = NULL;
                 $this->email = NULL;
                 //$this->password = $result['nim'];
                 $this->phone = NULL;
+                $this->level = NULL;
             }
         }
 

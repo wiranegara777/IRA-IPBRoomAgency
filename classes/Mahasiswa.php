@@ -20,6 +20,7 @@
 			$this->phone = $result['phone'];
 			$this->departemen = $result['departemen'];
 			$this->nim = $result['nim'];
+			$this->level = $result['level'];
 		}else{
 			$this->id = '';
 			$this->name = '';
@@ -27,9 +28,14 @@
 			$this->phone = '';
 			$this->departemen = '';
 			$this->nim = '';
+			$this->level = '';
 		}
 	 }
 	
+	public function getId(){
+		return $this->id;
+	}
+
 	public function setDepartemen($departemen){
 			$this->departemen = $departemen;
 		
