@@ -12,7 +12,7 @@ $crud = new Crud();
 
 $id_pj = $_GET['id_pj'];
 $_SESSION['pj'] = $id_pj;
-//cek siapa yg login
+//cek siapa yg login apakah mahasiwa?
 $student = new Mahasiswa($id);
 if ($student->getLevel() == 2)
         $sender = 1;

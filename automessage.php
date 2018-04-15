@@ -17,9 +17,12 @@
             $student = new Mahasiswa($id);
             if ($student->getLevel() == 2)
                     $sender = 1;
-            else    
-                    $sender = 0;
-
+            else    {
+                        $swap = $id;
+                        $id = $id_pj;
+                        $id_pj = $swap;
+                        $sender = 0;
+                    }
             $query = "SELECT * from message where id_user = $id and id_pj = $id_pj";
             $result = $crud->getData($query);
             //cek apakah ada conversations
@@ -33,12 +36,14 @@
             ?>
                 <p style="color:red;"> <?php echo $user->getName(); ?> </p>
                 <p> <?php echo $res['conversation'] ?> </p>
+                <p> <?php echo $res['dates']; ?> </p>
             <?php
                   } else {
         ?>
             <li>
                 <p> <?php echo $pj->getName(); ?> </p>
                 <p> <?php echo $res['conversation'] ?> </p>
+                <p> <?php echo $res['dates']; ?> </p>
             </li>
         <?php }
             //end of sender checker 

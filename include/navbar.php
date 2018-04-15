@@ -43,7 +43,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="proses/logout.php">Logout</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a href="notifMessage.php" class="dropdown-item" href="#">Pesan</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
