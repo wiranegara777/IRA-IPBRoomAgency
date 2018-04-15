@@ -4,6 +4,7 @@
     include_once "classes/Room.php";
     include_once "classes/Mahasiswa.php";
     include_once "classes/Pj.php";
+    include_once "classes/order.php";
 
     //get Mahasiswa
     $mahasiswa = new Mahasiswa($_SESSION['id']);
@@ -123,6 +124,7 @@
     </div>
   </div>
 </div>
+<!-- end of modal -->
 
 </html>
 

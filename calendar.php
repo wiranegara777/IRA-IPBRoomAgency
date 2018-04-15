@@ -1,4 +1,11 @@
 <link rel="stylesheet" href="calendar/calendar.css">
+
+<!-- GET ROOM DATE -->
+<?php    
+    $idroom = $room->getId_room();
+    
+?>
+
 <?php
     $monthNames = Array("January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December");
@@ -70,8 +77,17 @@
             <li class="jalang"></li>
           <?php }
          else {  $chek = 0;
+                $queryDate = "SELECT * FROM order_room WHERE id_room = $idroom AND date = $cek AND month = $cMonth AND year = $cYear ";
+                $resultDate = $crud->getData($queryDate);
                 ?>
-            <li style="font-size:14px;" class="w3-blue jalang"><?php echo $cek; ?></li>
+            <li style="font-size:14px;" class="w3-blue jalang">
+                  <?php 
+                      if($resultDate->num_rows > 0)
+                          echo "<a style='color:red' href='#'>".$cek."</a>"; 
+                      else
+                          echo $cek;              
+                  ?>
+            </li>
         
           <?php     }
           }

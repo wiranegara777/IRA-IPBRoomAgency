@@ -13,6 +13,7 @@
 <html lang="en">
     <title>Notifications</title>
     <body>
+        <h3>Your Order</h3>
         <!-- <a href="message.php">Diskusi</a> -->
         <ul>
         <?php
@@ -29,6 +30,7 @@
             <li>
                 <p> <?php echo $user->getName(); ?> </p>
                 <p> <?php echo $room->getTitle(); ?> </p>
+                <P> <?php echo "Tagihan: ".$order->getSum_price()."; "?> </p>
             </li>
         <?php }
             //end of while 
