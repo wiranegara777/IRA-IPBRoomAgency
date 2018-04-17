@@ -6,6 +6,7 @@ include_once "classes/order.php";
 include_once "classes/Room.php";
 include_once "classes/Mahasiswa.php";
 include_once "classes/Pj.php";
+include_once "proses/prosesmessage.php";
 
 $id = $_SESSION['id'];
 $crud = new Crud();
@@ -28,7 +29,7 @@ else
         
         <div id = "ulang"></div>
 
-    <form action="proses/prosesmessage.php" method="post" name="form1">
+    <form action="message.php?id_pj='<?php echo $id_pj; ?>'" method="post" name="form1">
         <table width="25%" border="0">
             <tr> 
                 <td>Chat</td>
