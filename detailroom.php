@@ -5,9 +5,12 @@
     include_once "classes/Mahasiswa.php";
     include_once "classes/Pj.php";
     include_once "classes/order.php";
+    include_once "classes/Rating.php";
 
     //get Mahasiswa
     $mahasiswa = new Mahasiswa($_SESSION['id']);
+
+    $id_user = $_SESSION['id'];
 
     $crud = new Crud();
 
@@ -19,6 +22,12 @@
     
     //get name Pjruang
     $pj = new Pj($room->getId_user());
+
+    //hitung rata-rata rating
+    $query_avg = "SELECT AVG(rating) AS rate FROM rating WHERE id_room = $id";
+    $result = $crud->getData($query_avg);
+    $res_avg = mysqli_fetch_array($result);
+    $avg_rate = $res_avg['rate'];
 ?>
 
 <html lang="en">
@@ -67,6 +76,32 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Order Room
         </button>
+
+    <!-- Rating -->
+    <div class="card" style="width: 18rem;">
+  <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
+  <div class="card-body">
+    <h5 class="card-title">Rating</h5>
+    <p class="card-text"><?php echo $avg_rate; ?></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <form role="form" method="post" action="proses/rating_proses.php" enctype="multipart/form-data">
+        <label>Value Rating</label>
+                    <select name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        
+                    </select>
+        <label>comment </label>
+        <input name="comment" type="text">
+        <input type="hidden" name="id_user" value="<?php echo $id_user; ?>">
+        <input type="hidden" name="id_room" value="<?php echo $id; ?>">
+        <button type="submit" name="Submit" class="container btn btn-primary">Rate !</button>
+    </form>
+  </div>
+</div>
 
     </body>
 
