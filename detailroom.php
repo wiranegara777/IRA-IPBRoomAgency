@@ -85,6 +85,13 @@
     <p class="card-text"><?php echo $avg_rate; ?></p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
     <form role="form" method="post" action="proses/rating_proses.php" enctype="multipart/form-data">
+        <?php 
+            $query3 = "SELECT * FROM rating WHERE id_user = $id_user and id_room = $id";  
+            $resultCek = $crud->getData($query3);
+            if($resultCek->num_rows > 0){
+                echo "ANDA SUDAH MEMBERI RATING";
+            } else {
+        ?>
         <label>Value Rating</label>
                     <select name="rating">
                         <option value="1">1</option>
@@ -99,6 +106,7 @@
         <input type="hidden" name="id_user" value="<?php echo $id_user; ?>">
         <input type="hidden" name="id_room" value="<?php echo $id; ?>">
         <button type="submit" name="Submit" class="container btn btn-primary">Rate !</button>
+        <?php } ?>
     </form>
   </div>
 </div>
