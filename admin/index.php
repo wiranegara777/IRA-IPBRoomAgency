@@ -70,14 +70,14 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
+            <span class="nav-link-text">Registrasi</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Navbar</a>
+              <a href="register_mahasiswa.html">Registrasi Mahasiswa</a>
             </li>
             <li>
-              <a href="cards.html">Cards</a>
+              <a href="register_pj.html">Registrasi PJ Ruangan</a>
             </li>
           </ul>
         </li>
