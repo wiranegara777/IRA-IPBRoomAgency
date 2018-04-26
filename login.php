@@ -1,71 +1,133 @@
+<!DOCTYPE html>
 
-        
-<html lang="en">
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- bootstrap css -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-
-<!-- font awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-<!--  bootstrap js -->
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Log In</title>
+    <meta charset="utf-8" />
+    <title>IRA(IPB Room Agency)</title>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+<!-- Custom styles for this template -->
+<link href="floating-labels.css" rel="stylesheet">
+<!-- CSS Login -->
+<style type="text/css">
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* IRA Tittle */
+.tittle {
+    text-align: center;
+}
+/* Extra style for the signup button (cyan) */
+.signup {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #008B8B ;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 20px 0 18px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 25%;
+    border-radius: 40%;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: center;
+    padding-top: 16px;
+}
+
+/* Change styles for span and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        float: none;
+    }
+    .signup {
+        width: 100%;
+    }
+}     
+</style>
 </head>
- 
 <body>
-    <a href="index.php">Home</a>
-    <br/><br/>
-    <!-- check if get error -->
-    <?php 
-    if(isset($_GET['err'])){
-    ?>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            Wrong Email or Username !
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-            </button>
-    </div>
-    <?php } ?>
-
-    <div class="container">
-        <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-sm">
-                        <h2 class="text-center"><i class="fas fa-home"></i></h2></br>
-                        <h4 class="text-center">Sign In to IPB Room Agency</h4>
-                        <div class="card" style="margin-left:0.7em; width: 20rem;">
-                                <div class="card-body">
-                                    <form action="proses/LoginProcess.php" method="post">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Password</label>
-                                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                            </div>
-                                            <!-- <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                            </div> -->
-                                            <button type="submit" name="Submit" class="container btn btn-primary">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                </div>
-                <div class="col-sm"></div>
+        <?php 
+        if(isset($_GET['err'])){
+        ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Wrong Email or Username !
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                </button>
         </div>
-    </div>
-</body>
+        <?php } ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <form action="proses/LoginProcess.php" method="post">
+        <div class="imgcontainer">
+          <img src="image/IPB.jpg" alt="Avatar" class="avatar">
+        </div>
+        <h2 class="tittle">IRA</h2>
+        <h3 class="tittle">IPB Room Agency</h3>
+        
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
 
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+          <button type="submit" name="Submit" class="btn btn-primary">Log In</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="signup"><a href="Register.html">Register</a></button>
+          <span class="psw">Forgot <a href="Forgot_Password.html">Password</a></span>
+        </div>
+        </form>
+      </div>
+      <div class="col-sm"></div>
+</body>
 </html>
