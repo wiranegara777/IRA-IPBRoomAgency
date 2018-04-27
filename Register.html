@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+        
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+            /*
+    /* Created by Filipe Pina
+     * Specific styles of signin, register, component
+     */
+    /*
+     * General styles
+     */
+    
+    
+    
+    .main{
+         margin-top: 25px;
+      margin-bottom: 70px;
+    }
+    
+    h1.title { 
+        font-size: 35px;
+        font-weight: 500; 
+    }
+    
+    h3.title { 
+        font-size: 30px; 
+        font-weight: 500; 
+    }
+    
+    hr{
+    margin-bottom: 0.5px;
+    
+      border-width: 1.4px;
+        width: 30%;
+     border-color: #ffff;
+    }
+    
+    .form-group{
+        margin-bottom: 15px;
+      
+    }
+    
+    label{
+        margin-bottom: 15px;
+    }
+    
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 11px;
+        padding-top: 3px;
+    }
+    
+    .main-login{
+         background-color: #ffff;
+        /* shadows and rounded borders */
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 40px;
+        -moz-box-shadow: 5px 3px 3px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 5px 3px 3px rgba(0, 0, 0, 1);
+        box-shadow: 0px 4.5px 10px rgba(0, 0, 0, 0.5);
+    
+    }
+    
+    .main-center{
+         margin-top: 30px;
+         margin: 0 auto;
+         max-width: 337px;
+        padding: 40px 40px;
+    
+    }
+    
+    .login-button{
+        margin-top: 15px;
+      background-color: #008B8B;
+    }
+    
+    .login-register{
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    a{
+      color: #008B8B;
+    
+    }
+    
+    footer{
+       background-color: #424558;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 35px;
+        text-align: center;
+        color: #CCC;
+    }
+    
+    footer p {
+        padding: 10.5px;
+        margin: 0px;
+        line-height: 100%;
+    }
+    
+    [type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    padding-top: 8px;
+    margin-top: 14px;
+    cursor: pointer;
+    line-height: 0px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #04B4AE;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+    
+</style>
+
+		<title>Register IPB Room Agency</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+                    <img class="mb-4" src="image/IPB.jpg" alt="" width="95" height="95">
+                     <h3 class="title">Register Account</h3>
+                     <h1 class="title">IPB Room Agency</h1>
+                    <hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="login.html">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Nama Lengkap</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="nama_lengkap" id="name"  placeholder="Masukan Nama Lengkap" required/>
+								</div>
+							</div>
+            </div>
+
+            <div class="form-group">
+                <label for="name" class="cols-sm-2 control-label">Jenis Kelamin</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <p> &nbsp;
+                        <input type="radio" id="lakilaki" name="jeniskelamin" checked />
+                        <label for="lakilaki">Laki-Laki</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="perempuan" name="jeniskelamin"/>
+                        <label for="perempuan">Perempuan</label>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="form-group">
+                <label for="username" class="cols-sm-2 control-label">Nomor Induk Mahasiswa</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="nim" id="nim"  placeholder="Masukan NIM" required/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                  <label for="username" class="cols-sm-2 control-label">Fakultas</label>
+                  <div class="cols-sm-10">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-list" aria-hidden="true"></i></span>
+                      <select name="fakultas" id="fakultas" class="form-control selectpicker" required>
+                          <option value="">Pilih Fakultas</option>
+                          <option >FMIPA</option>
+                          <option >FEM</option>
+                          <option >FPIK</option>
+                          <option >FEMA</option>
+                          <option >SB</option>
+                          <option >FAPERTA</option>
+                          <option >FAPET</option>
+                          <option >FATETA</option>
+                          <option >FAHUTAN</option>
+                          <option >FKH</option>
+                          <option >D3</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">Departement</label>
+                    <div class="cols-sm-10">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list" aria-hidden="true"></i></span>
+                        <select name="department" id="department" class="form-control selectpicker" required>
+                            <option value="">Pilih Departement</option>
+                            <option >Ilmu Komputer</option>
+                            <option >Geofisika dan Meteorologi</option>
+                            <option >Biologi</option>
+                            <option >Biokimia</option>
+                            <option >Matematika</option>
+                            <option >Statistika</option>
+                            <option >Fisika</option>
+                            <option >Kimia</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="username" class="cols-sm-2 control-label">Angkatan</label>
+                      <div class="cols-sm-10">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-list" aria-hidden="true"></i></span>
+                          <select name="angkatan" id="angkatan" class="form-control selectpicker" required>
+                              <option value="">Pilih Angkatan</option>
+                              <option >2013</option>
+                              <option >2014</option>
+                              <option >2015</option>
+                              <option >2016</option>
+                              <option >2017</option>
+                              <option >2018</option>
+                              <option >2019</option>
+                              <option >2020</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">E-mail</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Masukan E-mail" required/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Kata Sandi</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Masukan Kata Sandi" required/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Ulangi Kata Sandi</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Ulangi Kata Sandi" required/>
+								</div>
+							</div>
+						</div>
+
+            <div class="form-group">
+                <label for="confirm" class="cols-sm-2 control-label">Telepon</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="telepon" id="telepon"  placeholder="Masukan Nomor Telepon (+62)" required/>
+                  </div>
+                </div>
+              </div>
+
+						<div class="form-group ">
+							<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Register"/>
+						</div>
+						<div class="login-register">
+				            <a href="login.html">Login</a>
+				         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>

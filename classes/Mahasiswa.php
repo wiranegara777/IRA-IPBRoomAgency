@@ -7,6 +7,9 @@
 	
 	protected $departemen;
 	protected $nim;
+	protected $angkatan;
+	protected $fakultas;
+
 
 	public function Mahasiswa($id_mahasiswa){
 		if($id_mahasiswa != NULL){
@@ -21,6 +24,8 @@
 			$this->departemen = $result['departemen'];
 			$this->nim = $result['nim'];
 			$this->level = $result['level'];
+			$this->angkatan = $result['angkatan'];
+			$this->fakultas = $result['fakultas'];
 		}else{
 			$this->id = '';
 			$this->name = '';
@@ -29,6 +34,9 @@
 			$this->departemen = '';
 			$this->nim = '';
 			$this->level = '';
+			$this->angkatan = '';
+			$this->fakultas = '';
+
 		}
 	 }
 	

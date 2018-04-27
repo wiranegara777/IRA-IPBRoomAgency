@@ -22,12 +22,16 @@ if(isset($_POST['Submit'])) {
     $name = $crud->escape_string($_POST['name']);
     $email = $crud->escape_string($_POST['email']);
     $nim = $crud->escape_string($_POST['nim']);
+    $fakultas = $crud->escape_string($_POST['fakultas']);
     $departemen = $crud->escape_string($_POST['departemen']);
+   // $departemen = '1';
     $password = $crud->escape_string($_POST['password']);
+    $password2 = $crud->escape_string($_POST['password2']);
+    $angkatan = $crud->escape_string($_POST['angkatan']);
+    $phone = $crud->escape_string($_POST['phone']);
     $pass = $password;
     $password = md5($password);  
-
-    $msg = $validation->check_empty($_POST, array('name', 'email','nim','departemen','password'));
+    $msg = $validation->check_empty($_POST, array('name', 'email','nim','departemen','password','fakultas','angkatan','phone'));
   //  $check_age = $validation->is_age_valid($_POST['age']);
     $check_email = $validation->is_email_valid($_POST['email']);
     
@@ -39,7 +43,7 @@ if(isset($_POST['Submit'])) {
     }  elseif (!$check_email) {
         echo 'Please provide proper email.';
     }    
-    else { 
+    elseif ($pass == $password2) { 
        
         date_default_timezone_set('Asia/Jakarta');
           //include 'phpmailer/PHPMailerAutoload.php';
@@ -70,7 +74,7 @@ if(isset($_POST['Submit'])) {
 
           $mail->addAddress($email);
           $mail->Subject = "[BERHASIL] Pendaftaran Akun Baru IRA";
-          $pesan = "<img src='pestasains.ipb.ac.id/pesta2017/images/Untitled-22.png'><br><br>
+          $pesan = "<img style='width:20%;' src='https://upload.wikimedia.org/wikipedia/id/thumb/c/cb/Logo_IPB.svg/1024px-Logo_IPB.svg.png'><br><br>
 
           Yth. ".$name." <br><br><br> Terima kasih telah Menggunakan layanan IRA.
               <br>Berikut kami kirimkan detil informasi anda : <br><br><b>URL Login</b> : <a href='http://pestasains.ipb.ac.id/pesta2017/dashboard/masuk'>Log In</a>
@@ -89,11 +93,14 @@ if(isset($_POST['Submit'])) {
               echo "<script>alert('Error " . $mail->ErrorInfo . "')</script>";
           }
           else { // $result3=mysqli_multi_query($con,$sql3);
-                $crud->execute("INSERT INTO user(name,nim,email,password,departemen,level) VALUES('$name','$nim','$email','$password','$departemen',2)");
+                $crud->execute("INSERT INTO user(name,nim,email,password,departemen,level,fakultas,angkatan,phone) VALUES('$name','$nim','$email','$password','$departemen',2,'$fakultas','$angkatan','$phone')");
                 echo "<script>alert('Berhasil mendaftar sebagai peserta! Silahkan cek email anda.');
-                document.location.href='../login.html';</script>";
+                document.location.href='../login.php';</script>";
             }
     
+    }  else {
+        echo "<script>alert('Salah memasukkan password');
+                document.location.href='../login.php';</script>";
     }
 }
 ?>

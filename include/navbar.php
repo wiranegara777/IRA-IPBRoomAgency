@@ -1,51 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">IRA</a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #008B8B;">
+  <a class="navbar-brand" href="Beranda.html">IRA(IPB Room Agency)</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <!-- form -->
+
+      <!-- Search -->
       <form class="form-inline my-2 my-lg-0">
-        <input style="width:400px;" class="form-control mr-sm-2" type="search" placeholder="Search Room" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input style="width:300px;" class="form-control mr-sm-2" type="search" placeholder="Search Room" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" style="color: whitesmoke; border-color: whitesmoke " type="submit">Search</button>
       </form>
     </ul>
+
     <!-- navbar right -->
     <ul class="navbar-nav navbar-right">
-      <li class="navbar-item">
-        <a class="nav-link" href="notifications.php">
-            <i class="fas fa-bell"></i>
-            Notifications <span class="badge badge-danger">1</span>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Notifikasi <i class="fa fa-bell" aria-hidden="true"></i> <span class="badge badge-danger">1</span>
         </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a href="list-order.html" class="dropdown-item">Order</a>
+          <a class="dropdown-item" href="pesan.html">Pesan <span class="badge badge-danger">1</span></a>
+         <!-- <div class="dropdown-divider"></div>          
+          <a class="dropdown-item" href="Login.html">Logout</a> -->
+        </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo $Mahasiswa->getName(); ?>
+         <?php echo $Mahasiswa->getName(); ?> <i class="fas fa-user"></i>
         </a>
+
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a href="profil.html" class="dropdown-item">Profil</a>
           <a class="dropdown-item" href="proses/logout.php">Logout</a>
-          <a href="notifMessage.php" class="dropdown-item" href="#">Pesan</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+         <!-- <div class="dropdown-divider"></div>          
+          <a class="dropdown-item" href="Login.html">Logout</a> -->
         </div>
       </li>
     </ul>

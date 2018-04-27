@@ -123,7 +123,7 @@ span.psw {
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="signup"><a href="Register.html">Register</a></button>
+          <button type="button" class="signup" style="color:black;"><a href="register.php">Register</a></button>
           <span class="psw">Forgot <a href="Forgot_Password.html">Password</a></span>
         </div>
         </form>
