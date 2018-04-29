@@ -25,6 +25,15 @@ $( function() {
 
                 <label>Location</label>
                 <input name="address" type="text" class="form-control" placeholder="Enter Address">
+
+                <label>fasilitas</label>
+                <input name="fasilitas" type="text" class="form-control" placeholder="AC,Proyektor,Kursi">
+
+                <label>fakultas</label>
+                <input name="fakultas" type="text" class="form-control" placeholder="FMIPA">
+
+                <label>kapasitas</label>
+                <input name="kapasitas" type="number" class="form-control" placeholder="200">
                 
                 <label>Price</label>
                 <input name="price" type="number" class="form-control" placeholder="200000">
@@ -42,6 +51,16 @@ $( function() {
                     <label>Insert Image</label></br>
                         <input type="hidden" name="size" value"1000000">
                         <input type="file" name="image">
+                      </br>
+
+                      <label>Insert Image2</label></br>
+                        <!-- <input type="hidden" name="size" value"1000000"> -->
+                        <input type="file" name="image2">
+                      </br>
+
+                      <label>Insert Image3</label></br>
+                        <!-- <input type="hidden" name="size" value"1000000"> -->
+                        <input type="file" name="image3">
                       </br>
                       <center>
                     <label>

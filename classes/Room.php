@@ -9,9 +9,14 @@
         protected $body;
         protected $address;
         protected $image;
+        protected $image2;
+        protected $image3;
         protected $lat;
         protected $lng;
         protected $price;
+        protected $fakultas;
+        protected $fasilitas;
+        protected $kapasitas;
 
         //constructor
         public function Room($id_room){
@@ -26,9 +31,15 @@
                 $this->body = $result['body'];
                 $this->address = $result['address'];
                 $this->image = $result['image'];
+                $this->image2 = $result['image2'];
+                $this->image3 = $result['image3'];
                 $this->lat = $result['lat'];
                 $this->lng = $result['lng'];
                 $this->price = $result['price'];
+                $this->fakultas = $result['fakultas'];
+                $this->kapasitas = $result['kapasitas'];
+                $this->fasilitas = $result['fasilitas'];
+               
 
             } else {
                 $this->id_room = NULL;
@@ -37,9 +48,14 @@
                 $this->body = NULL;
                 $this->address = NULL;
                 $this->image = NULL;
+                $this->image2 = NULL;
+                $this->image3 = NULL;
                 $this->lat = NULL;
                 $this->lng = NULL;
                 $this->price = NULL;
+                $this->fakultas = NULL;
+                $this->kapasitas = NULL;
+                $this->fasilitas = NULL;
             }
         }
 
@@ -68,6 +84,14 @@
             return $this->image;
         }
 
+        public function getImage2(){
+            return $this->image2;
+        }
+
+        public function getImage3(){
+            return $this->image3;
+        }
+
         public function getLat(){
             return $this->lat;
         }
@@ -80,12 +104,24 @@
             return $this->price;
         }
 
+        public function getFasilitas(){
+            return $this->fasilitas;
+        }
+
+        public function getKapasitas(){
+            return $this->kapasitas;
+        }
+
+        public function getFakultas(){
+            return $this->fakultas;
+        }
+
         //insert room to database
-        public function insertRoom($title,$body,$image,$id_user,$lat,$long,$address,$price){
+        public function insertRoom($title,$body,$image,$image2,$image3,$id_user,$lat,$long,$address,$price,$fasilitas,$fakultas,$kapasitas){
             $crud = new Crud();
                 $result = $crud->execute("INSERT INTO room
-                          (id_user,title,body,address,image,lat,lng,price)
-                                 VALUES('$id_user','$title','$body','$address','img/$image','$lat','$long','$price')");
+                          (id_user,title,body,address,image,image2,image3,lat,lng,price,fasilitas,fakultas,kapasitas)
+                                 VALUES('$id_user','$title','$body','$address','img/$image','img/$image2','img/$image3','$lat','$long','$price','$fasilitas','$fakultas','$kapasitas')");
             return $result;
         }
 

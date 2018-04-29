@@ -30,10 +30,24 @@
       //$image = $_FILES['image']['name'];
       $ext     = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
       $image   = date('mdYhia').'.'.$ext;
+
+     // $ext2     = pathinfo($_FILES['image2']['name'], PATHINFO_EXTENSION);
+      $image2   = basename($_FILES["image2"]["name"]);
+
+    //  $ext3     = pathinfo($_FILES['image3']['name'], PATHINFO_EXTENSION);
+      $image3   = basename($_FILES["image3"]["name"]);
+
       $target  = "../img/".basename($image);
+      $target2  = "../img/".basename($image2);
+      $target3  = "../img/".basename($image3);
+
       $id_user = $admin->getId();
       $lat     = $crud->escape_string($_POST['lat']);
       $long    = $crud->escape_string($_POST['long']);
+
+      $fakultas  = $crud->escape_string($_POST['fakultas']);
+      $fasilitas = $crud->escape_string($_POST['fasilitas']);
+      $kapasitas = $crud->escape_string($_POST['kapasitas']);
 
     //   //Simple validation
       if($title == ''|| $body == '' ){
@@ -46,13 +60,16 @@
       if($tipe_image == "image/jpeg" || $tipe_image == "image/png"){
           if($foto_size < 1000000) {
                     if(move_uploaded_file($_FILES['image']['tmp_name'],"$target")){
-                          $query = $room->insertRoom($title,$body,$image,$id_user,$lat,$long,$address,$price);
+                          move_uploaded_file($_FILES['image2']['tmp_name'],"$target2");
+                          move_uploaded_file($_FILES['image3']['tmp_name'],"$target3");
+
+                          $query = $room->insertRoom($title,$body,$image,$image2,$image3,$id_user,$lat,$long,$address,$price,$fasilitas,$fakultas,$kapasitas);
                        if($query){
                          // $query77 = mysqli_query($conn,"INSERT INTO notif (pesan,id_user) values ('Event Successfully uploaded','$id_user')");
                           //$query77 = mysqli_query($conn,"INSERT INTO notif (pesan,id_user) values ('Waiting Confirmation from Admin','$id_user')");
                         ?>
                         	<script language="javascript">alert("Adding Room Successful !");</script>
-                          <script>document.location.href='../admin_dash.php';</script>
+                          <script>document.location.href='../index.php';</script>
                         <?php }else{
                           ?>
                           <script language="javascript">alert("failed making room !");</script>
