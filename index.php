@@ -126,7 +126,7 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FAHUTAN</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FAHUTAN" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
             <br></br>
