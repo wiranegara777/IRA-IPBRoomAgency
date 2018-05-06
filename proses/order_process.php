@@ -13,6 +13,7 @@
         $date = $_POST['date'];
         $payment = $_POST['payment'];
         $duration = $_POST['duration'];
+        $status = "waiting";
 
         $year   = strtok($date,'-');
         $month = strtok('-');
@@ -34,7 +35,7 @@
 
         $order = new Order('');
 
-        $result = $order->insertOrder($id_user,$id_room,$id_pj,$tgl,$month,$year,$duration,$payment,$sumprice);
+        $result = $order->insertOrder($id_user,$id_room,$id_pj,$tgl,$month,$year,$duration,$payment,$sumprice,$status);
 
         if($result){
             //get latest order_id

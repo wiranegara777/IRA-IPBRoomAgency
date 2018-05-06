@@ -14,6 +14,8 @@
         protected $duration;
         protected $payment;
         protected $sum_price;
+        protected $status;
+        protected $dateCreated;
 
         public function Order($id_order){
             if($id_order != NULL){
@@ -31,6 +33,8 @@
                 $this->duration = $result['duration'];
                 $this->payment = $result['payment'];
                 $this->sum_price = $result['sum_price'];
+                $this->status = $result['status'];
+                $this->dateCreated = $result['dateCreated'];
             }else{
                 $this->id_order = NULL;  
                 $this->id_user = NULL;  
@@ -42,6 +46,8 @@
                 $this->duration = NULL;  
                 $this->payment = NULL;  
                 $this->sum_price = NULL;    
+                $this->status = NULL;
+                $this->dateCreated = NULL;
             }
         }
 
@@ -74,13 +80,19 @@
         public function getSum_price(){
             return $this->sum_price;
         }
+        public function getStatus(){
+            return $this->status;
+        }
+        public function getDateCreated(){
+            return $this->dateCreated;
+        }
 
         //add order to database
-        public function insertOrder($id_user,$id_room,$id_pj,$tgl,$month,$year,$duration,$payment,$sum_price){
+        public function insertOrder($id_user,$id_room,$id_pj,$tgl,$month,$year,$duration,$payment,$sum_price,$status){
             $crud = new Crud();
             $result = $crud->execute("INSERT INTO order_room
-                          (id_user,id_room,id_pj,date,month,year,duration,payment,sum_price)
-                                 VALUES('$id_user','$id_room','$id_pj','$tgl','$month','$year','$duration','$payment','$sum_price')");
+                          (id_user,id_room,id_pj,date,month,year,duration,payment,sum_price,status)
+                                 VALUES('$id_user','$id_room','$id_pj','$tgl','$month','$year','$duration','$payment','$sum_price','$status')");
             return $result;
         }
 

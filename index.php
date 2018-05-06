@@ -52,6 +52,7 @@ $result = $crud->getData($query);
     <!-- Navbar IRA -->
     <?php include_once "include/navbar.php"; ?>
 <!--slider gambar-->
+
 <br>
 <br>
 <center>
@@ -89,7 +90,7 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FAPERTA</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FAPERTA" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
             <br></br>
@@ -98,7 +99,7 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FKH</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FKH" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
             <br></br>
@@ -107,7 +108,7 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FPIK</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FPIK" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
           </div>
@@ -117,7 +118,7 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FAPET</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FAPET" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
             <br></br>
@@ -135,9 +136,9 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FATETA</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FATETA" class="btn btn-primary">Lihat Detail</a>
                     </div>
-\            </div>
+            </div>
           </div>
           <div class="col-sm">
             <div class="card" style="width: 12rem;">
@@ -145,7 +146,7 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FMIPA</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FMIPA" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
             <br></br>
@@ -154,7 +155,7 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FEM</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FEM" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
             <br></br>
@@ -163,17 +164,18 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">FEMA</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=FEMA" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
           </div>
           <div class="col-sm">
+
             <div class="card" style="width: 12rem;">
                 <img class="card-img-top" src="image/IPB.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">AUDIT</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=AUDIT" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
             <br></br>
@@ -182,9 +184,18 @@ $result = $crud->getData($query);
                 <div class="card-body">
                     <h5 class="card-title">Gymnasium</h5>
                     <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                    <a href="List_Ruangan.html" class="btn btn-primary">Lihat Detail</a>
+                    <a href="list-room.php?fakultas=GYMNASIUM" class="btn btn-primary">Lihat Detail</a>
                     </div>
             </div>
+
           </div>
+          
+          </div> 
+          
+          </div>
+          
+          <!-- footer -->
+        <?php include "include/footer.php"; ?>
 </body>
+        
 </html>

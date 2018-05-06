@@ -70,51 +70,7 @@ $result = $crud->getData($query);
 </head>
 <body>
     <!-- Navbar IRA -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #008B8B;">
-  <a class="navbar-brand" href="Beranda.html">IRA(IPB Room Agency)</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-
-      <!-- Search -->
-      <form class="form-inline my-2 my-lg-0">
-        <input style="width:300px;" class="form-control mr-sm-2" type="search" placeholder="Search Room" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" style="color: whitesmoke; border-color: whitesmoke;" type="submit">Search</button>
-      </form>
-    </ul>
-
-    <!-- navbar right -->
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Notifikasi <i class="fa fa-bell" aria-hidden="true"></i> <span class="badge badge-danger">1</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a href="#" class="dropdown-item">Order</a>
-          <a class="dropdown-item" href="#">Pesan</a>
-         <!-- <div class="dropdown-divider"></div>          
-          <a class="dropdown-item" href="Login.html">Logout</a> -->
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Mahasiswa
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a href="#" class="dropdown-item">Profil</a>
-          <a class="dropdown-item" href="Login.html">Logout</a>
-         <!-- <div class="dropdown-divider"></div>          
-          <a class="dropdown-item" href="Login.html">Logout</a> -->
-        </div>
-      </li>
-    </ul>
-    
-
-  </div>
-</nav>
+    <?php include_once "include/navbar.php"; ?>
 
 <section class="row-section">
         <div class="container">
@@ -129,18 +85,21 @@ $result = $crud->getData($query);
                                 <h4> <?php echo $res['title']; ?> </h4>
                             </div>
                             <div class="media-right align-self-center">
-                                <a href="detail-room.html" class="btn btn-default">Lihat Detail</a>
+                                <a href="detail-room.php?id=<?php echo $res['id_room']; ?>" class="btn btn-default">Lihat Detail</a>
                             </div>
+                           
                      </div></li>      
                     <?php } ?>
+                     <!-- if there is no room -->
+                     <?php if($result->num_rows <= 0)
+                          echo "<center><h4> Ruangan Belum Tersedia </h4></center>"; ?>
                 </ul>
+                
+                
+
             </div>
     </div>
     </section>
 
-    
-<script type="text/javascript">
-
-</script>
 </body>
 </html>

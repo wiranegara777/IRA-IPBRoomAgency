@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #008B8B;">
-  <a class="navbar-brand" href="Beranda.html">IRA(IPB Room Agency)</a>
+  <a class="navbar-brand" href="index.php">IRA(IPB Room Agency)</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,11 +18,12 @@
     <ul class="navbar-nav navbar-right">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Notifikasi <i class="fa fa-bell" aria-hidden="true"></i> <span class="badge badge-danger">1</span>
+         Notifikasi <i class="fa fa-bell" aria-hidden="true"></i> 
+         <!-- <span class="badge badge-danger">1</span> -->
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a href="list-order.html" class="dropdown-item">Order</a>
-          <a class="dropdown-item" href="pesan.html">Pesan <span class="badge badge-danger">1</span></a>
+          <a href="list-order.php" class="dropdown-item">Order</a>
+          <a class="dropdown-item" href="notifMessage.php">Pesan</a>
          <!-- <div class="dropdown-divider"></div>          
           <a class="dropdown-item" href="Login.html">Logout</a> -->
         </div>
