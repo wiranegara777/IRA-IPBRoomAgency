@@ -95,7 +95,7 @@ $crud = new Crud();
                         <p><?php echo $order->getDateCreated(); ?></p>
                     </div>
                         <div class="media-right align-self-center">
-                            <a href="detail_room.html" class="btn btn-default">Order Detail</a>
+                            <a href="detail-order.php?id=<?php echo $order->getId_order(); ?>" class="btn btn-default">Order Detail</a>
                         </div>
                     </div>
                  </li>      
@@ -114,7 +114,7 @@ $crud = new Crud();
                                 <p><?php echo $order->getDateCreated(); ?></p>
                             </div>
                                 <div class="media-right align-self-center">
-                                    <a href="detail_room.html" class="btn btn-default">Order Detail</a>
+                                    <a href="detail-order.php?id=<?php echo $order->getId_order(); ?>" class="btn btn-default">Order Detail</a>
                                 </div>
                             </div>
                         </li>    
@@ -133,7 +133,7 @@ $crud = new Crud();
                                 <p><?php echo $order->getDateCreated(); ?></p>
                             </div>
                                 <div class="media-right align-self-center">
-                                    <a href="detail_room.html" class="btn btn-default">Order Detail</a>
+                                    <a href="detail-order.php?id=<?php echo $order->getId_order(); ?>" class="btn btn-default">Order Detail</a>
                                 </div>
                             </div>
                         </li>

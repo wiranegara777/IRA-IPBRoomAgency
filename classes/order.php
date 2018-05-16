@@ -52,7 +52,9 @@
         }
 
         //getter
-
+        public function getId_order(){
+            return $this->id_order;
+        }
         public function getId_user(){
             return $this->id_user;
         }
