@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2018 at 01:37 PM
+-- Generation Time: May 18, 2018 at 12:45 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -83,20 +83,27 @@ CREATE TABLE `order_room` (
   `date` int(11) NOT NULL,
   `month` int(11) NOT NULL,
   `year` int(11) NOT NULL,
-  `payment` int(11) NOT NULL
+  `payment` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order_room`
 --
 
-INSERT INTO `order_room` (`id_order`, `id_room`, `id_user`, `id_pj`, `sum_price`, `duration`, `date`, `month`, `year`, `payment`) VALUES
-(1, 3, 10, 10, 18000, 3, 17, 3, 2018, 1),
-(2, 6, 10, 10, 16000, 2, 19, 3, 2018, 1),
-(4, 3, 3, 10, 12000, 2, 2, 4, 2018, 1),
-(5, 1, 3, 10, 4000, 2, 28, 3, 2018, 1),
-(6, 8, 3, 10, 54000, 6, 14, 4, 2018, 2),
-(7, 9, 11, 10, 3000, 3, 17, 4, 2018, 1);
+INSERT INTO `order_room` (`id_order`, `id_room`, `id_user`, `id_pj`, `sum_price`, `duration`, `date`, `month`, `year`, `payment`, `status`, `dateCreated`) VALUES
+(1, 3, 10, 10, 18000, 3, 17, 3, 2018, 1, 'waiting', '2018-05-04 11:47:43'),
+(2, 6, 10, 10, 16000, 2, 19, 3, 2018, 1, 'buying', '2018-05-04 12:46:58'),
+(4, 3, 3, 10, 12000, 2, 2, 4, 2018, 1, 'waiting', '2018-05-04 11:47:43'),
+(5, 1, 3, 10, 4000, 2, 28, 3, 2018, 1, 'buying', '2018-05-04 12:47:27'),
+(6, 8, 3, 10, 54000, 6, 14, 4, 2018, 2, 'finish', '2018-05-04 13:01:29'),
+(7, 9, 11, 10, 3000, 3, 17, 4, 2018, 1, 'waiting', '2018-05-04 11:47:43'),
+(8, 1, 3, 10, 4000, 2, 12, 5, 2018, 1, 'waiting', '2018-05-05 06:51:17'),
+(9, 3, 3, 10, 18000, 3, 24, 5, 2018, 1, 'waiting', '2018-05-05 07:30:03'),
+(10, 2, 3, 10, 5000, 1, 1, 5, 2018, 1, 'waiting', '2018-05-05 10:17:03'),
+(11, 2, 3, 10, 15000, 3, 16, 5, 2018, 1, 'waiting', '2018-05-06 08:23:15'),
+(12, 3, 3, 10, 12000, 2, 8, 5, 2018, 1, 'waiting', '2018-05-07 10:00:12');
 
 -- --------------------------------------------------------
 
@@ -156,10 +163,10 @@ INSERT INTO `room` (`id_room`, `id_user`, `title`, `body`, `address`, `image`, `
 (3, 10, 'Audit PPKU', '<p>ini adlah sesuatu yang harus dilupakan olehmu nak ahaha</p>\r\n', 'Bogor Agricultural', 'img/032720180124am.png', -6.596414, 106.799614, 6000, 'img/032720180124am.png', 'img/032720180124am.png', 'FAHUTAN', 'AC,proyektor,Kursi', 200),
 (5, 10, 'RK.U201', '<p>Midtrans are the</p>\r\n', 'Jakarta', 'img/032920180700pm.PNG', -6.596909, 106.797173, 7000, 'img/032720180124am.png', 'img/032720180124am.png', 'FATETA', 'AC,proyektor,Kursi', 200),
 (6, 10, 'FAC.207', '<p>adasdasd</p>\r\n', 'asdasd', 'img/032920180704pm.jpg', -6.561651, 106.769745, 8000, 'img/032720180124am.png', 'img/032720180124am.png', 'FMIPA', 'AC,proyektor,Kursi', 200),
-(8, 10, 'LSI', '<p>dasdasd</p>\r\n', 'dasdas', 'img/032920180700pm.PNG', -6.572224, 106.692154, 9000, 'img/032720180124am.png', 'img/032720180124am.png', 'FMIPA', 'AC,proyektor,Kursi', 200),
+(8, 10, 'LSI', '<p>dasdasd</p>\r\n', 'dasdas', 'img/032920180700pm.PNG', -6.572224, 106.692154, 9000, 'img/032720180124am.png', 'img/032720180124am.png', 'AUDIT', 'AC,proyektor,Kursi', 200),
 (9, 10, 'Rektorat', '<p>ini</p>\r\n', 'lampung', 'img/032920180704pm.jpg', -6.568131, 106.675842, 1000, 'img/032720180124am.png', 'img/032720180124am.png', 'FPIK', 'AC,proyektor,Kursi', 200),
 (10, 10, 'R.Sidang Ilkom IPB', '<p>asdasdasdasdxzc</p>\r\n', 'qweq', 'img/032920180708pm.jpg', -6.620312, 106.728714, 1000, 'img/032720180124am.png', 'img/032720180124am.png', 'PPKU', 'AC,proyektor,Kursi', 200),
-(11, 10, 'Audit AHN', '<p>testsetfgfdg</p>\r\n', 'dimana', 'img/033020180137pm.jpg', -6.597462, 106.803734, 50000, 'img/032720180124am.png', 'img/032720180124am.png', 'UMUM', 'AC,proyektor,Kursi', 200),
+(11, 10, 'Audit AHN', '<p>testsetfgfdg</p>\r\n', 'dimana', 'img/033020180137pm.jpg', -6.597462, 106.803734, 50000, 'img/032720180124am.png', 'img/032720180124am.png', 'AUDIT', 'AC,proyektor,Kursi', 200),
 (13, 2, 'RK.X304', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180117am.jpg', -6.598461, 106.702110, 1000, 'img/043020180117am.jpg', 'img/043020180117am.jpg', 'dasd', 'sad', 30),
 (14, 2, 'RK.X30455', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180122am.jpg', -6.598461, 106.702110, 1000, 'img/043020180122am.jpg', 'img/043020180122am.jpg', 'dasd', 'sad', 30),
 (15, 2, 'RKRKRKR', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180127am.jpg', -6.639385, 106.561005, 1000, 'img/social_share_room.jpg', 'img/DeluxeSuite_FINAL_large.jpg', 'dasd', 'sad', 30);
@@ -245,7 +252,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `order_room`
 --
 ALTER TABLE `order_room`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `rating`
