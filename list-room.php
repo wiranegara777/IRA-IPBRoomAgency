@@ -85,7 +85,7 @@ $result = $crud->getData($query);
                                 <h4> <?php echo $res['title']; ?> </h4>
                             </div>
                             <div class="media-right align-self-center">
-                                <a href="detail-room.php?id=<?php echo $res['id_room']; ?>" class="btn btn-default">Lihat Detail</a>
+                                <a href="baru.php?id=<?php echo $res['id_room']; ?>" class="btn btn-default">Lihat Detail</a>
                             </div>
                            
                      </div></li>      

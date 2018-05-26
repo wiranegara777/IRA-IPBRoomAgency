@@ -1,3 +1,11 @@
+<!-- Including jQuery is required. -->
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+ 
+ <!-- Including our scripting file. -->
+
+ <script type="text/javascript" src="script.js"></script>
+
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #008B8B;">
   <a class="navbar-brand" href="index.php">IRA(IPB Room Agency)</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,9 +16,9 @@
     <ul class="navbar-nav mr-auto">
 
       <!-- Search -->
-      <form class="form-inline my-2 my-lg-0">
-        <input style="width:300px;" class="form-control mr-sm-2" type="search" placeholder="Search Room" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" style="color: whitesmoke; border-color: whitesmoke " type="submit">Search</button>
+      <form class="form-inline my-2 my-lg-0" action="search.php" method="post" enctype="multipart/form-data">
+        <input name="name" id="search" style="width:300px;" class="form-control mr-sm-2" type="search" placeholder="Search Room" aria-label="Search">
+        <button type="submit" name="submit" class="btn btn-outline-success my-2 my-sm-0" style="color: whitesmoke; border-color: whitesmoke " type="submit">Search</button>
       </form>
     </ul>
 
