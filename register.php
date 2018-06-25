@@ -181,7 +181,7 @@
 							<input type="submit" name="Submit" class="btn btn-primary btn-lg btn-block login-button" value="Register"/>
 						</div>
 						<div class="login-register">
-				            <a href="login.html">Login</a>
+				            <a href="login.php">Login</a>
 				         </div>
 					</form>
 				</div>

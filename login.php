@@ -51,6 +51,7 @@ button:hover {
     width: auto;
     padding: 10px 18px;
     background-color: #008B8B ;
+    color: white;
 }
 
 /* Center the avatar image inside this container */
@@ -117,14 +118,12 @@ span.psw {
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required>
           <button type="submit" name="Submit" class="btn btn-primary">Log In</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
+          
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="signup" style="color:black;"><a href="register.php">Register</a></button>
-          <span class="psw">Forgot <a href="Forgot_Password.html">Password</a></span>
+          <button type="button" class="btn btn-secondary" ><a href="register.php" style="color:white;">Register</a></button>
+          <!-- <span class="psw">Forgot <a href="Forgot_Password.html">Password</a></span> -->
         </div>
         </form>
       </div>

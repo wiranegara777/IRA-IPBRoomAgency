@@ -95,6 +95,8 @@
                             <p class="card-text">No. Telp : <?php echo $pj->getPhone(); ?></p>
 
                             <button type="button" class="container btn btn-primary" data-toggle="modal" data-target="#ORDER">Order</button>
+                            <a href = "message.php?id_pj=<?php echo $pj->getId(); ?>"> <button type="button" class="container btn btn-secondary">Personal Message</button></a>
+
                         </div>
                     </div>
                     <!-- end of deskripsi -->
