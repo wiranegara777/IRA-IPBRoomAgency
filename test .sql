@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2018 at 12:45 AM
+-- Generation Time: Jun 26, 2018 at 04:39 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -65,7 +65,10 @@ INSERT INTO `message` (`id_message`, `id_user`, `id_pj`, `conversation`, `dates`
 (22, 11, 10, 'HOY', '2018-04-20 14:27:24', 1),
 (23, 11, 10, 'Oy sultan', '2018-04-20 14:27:49', 0),
 (24, 11, 10, 'ape', '2018-04-20 14:27:54', 1),
-(25, 11, 10, 'iya sini aja', '2018-04-20 14:28:04', 0);
+(25, 11, 10, 'iya sini aja', '2018-04-20 14:28:04', 0),
+(26, 24, 10, 'Pak Wira saya ingin meminjam ruangan RKU', '2018-06-25 22:52:29', 1),
+(27, 24, 10, 'bisa banget ko pak', '2018-06-25 22:53:37', 0),
+(28, 3, 12, 'ka mau tanya', '2018-06-26 11:17:49', 1);
 
 -- --------------------------------------------------------
 
@@ -85,6 +88,7 @@ CREATE TABLE `order_room` (
   `year` int(11) NOT NULL,
   `payment` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
+  `bukti` varchar(255) NOT NULL DEFAULT 'null',
   `dateCreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -92,18 +96,20 @@ CREATE TABLE `order_room` (
 -- Dumping data for table `order_room`
 --
 
-INSERT INTO `order_room` (`id_order`, `id_room`, `id_user`, `id_pj`, `sum_price`, `duration`, `date`, `month`, `year`, `payment`, `status`, `dateCreated`) VALUES
-(1, 3, 10, 10, 18000, 3, 17, 3, 2018, 1, 'waiting', '2018-05-04 11:47:43'),
-(2, 6, 10, 10, 16000, 2, 19, 3, 2018, 1, 'buying', '2018-05-04 12:46:58'),
-(4, 3, 3, 10, 12000, 2, 2, 4, 2018, 1, 'waiting', '2018-05-04 11:47:43'),
-(5, 1, 3, 10, 4000, 2, 28, 3, 2018, 1, 'buying', '2018-05-04 12:47:27'),
-(6, 8, 3, 10, 54000, 6, 14, 4, 2018, 2, 'finish', '2018-05-04 13:01:29'),
-(7, 9, 11, 10, 3000, 3, 17, 4, 2018, 1, 'waiting', '2018-05-04 11:47:43'),
-(8, 1, 3, 10, 4000, 2, 12, 5, 2018, 1, 'waiting', '2018-05-05 06:51:17'),
-(9, 3, 3, 10, 18000, 3, 24, 5, 2018, 1, 'waiting', '2018-05-05 07:30:03'),
-(10, 2, 3, 10, 5000, 1, 1, 5, 2018, 1, 'waiting', '2018-05-05 10:17:03'),
-(11, 2, 3, 10, 15000, 3, 16, 5, 2018, 1, 'waiting', '2018-05-06 08:23:15'),
-(12, 3, 3, 10, 12000, 2, 8, 5, 2018, 1, 'waiting', '2018-05-07 10:00:12');
+INSERT INTO `order_room` (`id_order`, `id_room`, `id_user`, `id_pj`, `sum_price`, `duration`, `date`, `month`, `year`, `payment`, `status`, `bukti`, `dateCreated`) VALUES
+(1, 3, 10, 10, 18000, 3, 17, 3, 2018, 1, 'buying', 'null', '2018-06-26 07:13:58'),
+(2, 6, 10, 10, 16000, 2, 19, 3, 2018, 1, 'buying', 'null', '2018-05-04 12:46:58'),
+(4, 3, 3, 10, 12000, 2, 2, 4, 2018, 1, 'buying', 'img/062620180845am.jpeg', '2018-06-26 07:14:02'),
+(5, 1, 3, 10, 4000, 2, 28, 3, 2018, 1, 'buying', 'null', '2018-05-04 12:47:27'),
+(6, 8, 3, 10, 54000, 6, 14, 4, 2018, 2, 'buying', 'null', '2018-06-26 07:14:07'),
+(7, 9, 11, 10, 3000, 3, 17, 4, 2018, 1, 'buying', 'null', '2018-06-26 07:14:16'),
+(8, 1, 3, 10, 4000, 2, 12, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:20'),
+(9, 3, 3, 10, 18000, 3, 24, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:25'),
+(10, 2, 3, 10, 5000, 1, 1, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:30'),
+(11, 2, 3, 10, 15000, 3, 16, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:35'),
+(12, 3, 3, 10, 12000, 2, 8, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:39'),
+(13, 1, 24, 10, 4000, 2, 12, 6, 2018, 1, 'buying', 'null', '2018-06-26 07:14:43'),
+(14, 16, 3, 12, 100000, 2, 13, 6, 2018, 2, 'finish', 'img/062620180856am.jpeg', '2018-06-26 07:18:46');
 
 -- --------------------------------------------------------
 
@@ -169,7 +175,9 @@ INSERT INTO `room` (`id_room`, `id_user`, `title`, `body`, `address`, `image`, `
 (11, 10, 'Audit AHN', '<p>testsetfgfdg</p>\r\n', 'dimana', 'img/033020180137pm.jpg', -6.597462, 106.803734, 50000, 'img/032720180124am.png', 'img/032720180124am.png', 'AUDIT', 'AC,proyektor,Kursi', 200),
 (13, 2, 'RK.X304', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180117am.jpg', -6.598461, 106.702110, 1000, 'img/043020180117am.jpg', 'img/043020180117am.jpg', 'dasd', 'sad', 30),
 (14, 2, 'RK.X30455', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180122am.jpg', -6.598461, 106.702110, 1000, 'img/043020180122am.jpg', 'img/043020180122am.jpg', 'dasd', 'sad', 30),
-(15, 2, 'RKRKRKR', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180127am.jpg', -6.639385, 106.561005, 1000, 'img/social_share_room.jpg', 'img/DeluxeSuite_FINAL_large.jpg', 'dasd', 'sad', 30);
+(15, 2, 'RKRKRKR', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180127am.jpg', -6.639385, 106.561005, 1000, 'img/social_share_room.jpg', 'img/DeluxeSuite_FINAL_large.jpg', 'dasd', 'sad', 30),
+(16, 12, 'raungan1', '<p>sfsdfsdfdffsdfdfssdfsdfsdfsdf</p>\r\n', 'asdasdas', 'img/062620180350am.jpg', -6.596755, 106.802017, 50000, 'img/gorengan.jpg', 'img/gorengan.jpg', 'FMIPA', 'asddadsd', 200),
+(17, 12, 'Ruangan 2', '<p>QWERTTASDFSFSGDFHFGJGHKZXCZXVXCBCVMNVBM,SDFSDGHFDHCVBNCBSDFGWERGSDGW</p>\r\n', 'Jalan Raya dramaga wing 2', 'img/062620180146pm.jpg', -6.559010, 106.730530, 40000, 'img/gorengan.jpg', 'img/gorengan.jpg', 'FAPET', 'AC, Proyektor, Kursi', 150);
 
 -- --------------------------------------------------------
 
@@ -202,7 +210,8 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `nim`, `phone`, `departem
 (12, 'Wira ganteng', 'haha@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '0812', '', 3, '', ''),
 (13, 'Wira ganteng 2', 'haha2@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '0812', '', 3, '', ''),
 (21, 'weeaw', 'aa@ddd.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '123456', '', 3, '', ''),
-(24, 'Muhammad Wiranegara Girinata', 'wiranegara_777@apps.ipb.ac.id', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G64150058', '35235234623', 'Ilmu Komputer', 2, 'FMIPA', '2015');
+(24, 'Muhammad Wiranegara Girinata', 'wiranegara_777@apps.ipb.ac.id', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G64150058', '35235234623', 'Ilmu Komputer', 2, 'FMIPA', '2015'),
+(25, 'm luthfir', 'm.luthfirrahman97@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'g56315263', '08937843', 'Ilmu Komputer', 2, 'FMIPA', '2015');
 
 --
 -- Indexes for dumped tables
@@ -246,13 +255,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `order_room`
 --
 ALTER TABLE `order_room`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `rating`
@@ -264,13 +273,13 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
