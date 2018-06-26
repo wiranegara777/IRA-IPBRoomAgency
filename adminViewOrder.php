@@ -235,7 +235,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
               </li>
 
             </ul>
+      
+            <?php if($order->getBukti() == "null") {?>
+                    
+                <h3>Belum Ada Bukti Bayar</h3>
+                <?php } else { ?>
+                    <h3>Bukti Bayar</h3>
+                    <img src="<?php echo $order->getBukti();?>" style="height: 450px;">
+            <?php } ?>
+
       </div>
+      
 
   </div>
 

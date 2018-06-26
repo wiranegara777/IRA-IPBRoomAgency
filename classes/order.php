@@ -35,6 +35,7 @@
                 $this->sum_price = $result['sum_price'];
                 $this->status = $result['status'];
                 $this->dateCreated = $result['dateCreated'];
+                $this->bukti = $result['bukti'];
             }else{
                 $this->id_order = NULL;  
                 $this->id_user = NULL;  
@@ -48,6 +49,7 @@
                 $this->sum_price = NULL;    
                 $this->status = NULL;
                 $this->dateCreated = NULL;
+                $this->bukti = NULL;
             }
         }
 
@@ -87,6 +89,9 @@
         }
         public function getDateCreated(){
             return $this->dateCreated;
+        }
+        public function getBukti(){
+            return $this->bukti;
         }
 
         //add order to database

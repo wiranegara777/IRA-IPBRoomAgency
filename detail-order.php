@@ -231,8 +231,18 @@ $pj = new Pj($order->getId_pj());
                     </div>  
           </div>
 
-          <a href="#" class="btn btn-info tombol" role="button" style="margin-top: 10%; margin-left: 55%">Konfirm Pembayaran</a>
-          <a href="order_room.html" class="btn btn-info tombol" role="button" style="margin-top: 25%; margin-left: 80%">Tutup</a>
+          <?php if($order->getBukti() == "null") {?>
+
+          <h3>Upload Bukti Bayar</h3>
+          <form role="form" method="post" action="proses/addBukti.php" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="hidden" name="id_order" value="<?php echo $id_order; ?>">
+            <button class="btn btn-info tombol" type="submit" name="submit" style="margin-top: 10%; margin-left: 55%">Konfirm Pembayaran</button>
+          </form>
+          <?php } else { ?>
+              <h3>Bukti Bayar</h3>
+              <img src="<?php echo $order->getBukti();?>" style="height: 300px;">
+          <?php } ?>
             
 
         </div>
