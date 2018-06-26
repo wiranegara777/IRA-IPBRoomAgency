@@ -65,15 +65,13 @@
 
                           $query = $room->insertRoom($title,$body,$image,$image2,$image3,$id_user,$lat,$long,$address,$price,$fasilitas,$fakultas,$kapasitas);
                        if($query){
-                         // $query77 = mysqli_query($conn,"INSERT INTO notif (pesan,id_user) values ('Event Successfully uploaded','$id_user')");
-                          //$query77 = mysqli_query($conn,"INSERT INTO notif (pesan,id_user) values ('Waiting Confirmation from Admin','$id_user')");
-                        ?>
+                          ?>
                         	<script language="javascript">alert("Adding Room Successful !");</script>
-                          <script>document.location.href='../index.php';</script>
+                          <script>document.location.href='../admin_dash.php';</script>
                         <?php }else{
                           ?>
                           <script language="javascript">alert("failed making room !");</script>
-                          <!-- <script>document.location.href='../admin_dash.php';</script> -->
+                          <script>document.location.href='../admin_dash.php';</script>
                           <?php
                            }
                          }

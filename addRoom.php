@@ -15,8 +15,8 @@ $( function() {
 <!--  <script src="text/ckeditor.js"></script> -->
 <div class="w3-container w3-card-4 w3-padding">
 
-    <div class="formasik"><div class="w3-container w3-card-4 w3-padding">
-        <h2>Add Room</h2>
+    <div class="formasik">
+      <div class="w3-container w3-card-4 w3-padding">
         <div class="formasik">
             <form role="form" method="post" action="proses/addRoomProcess.php" enctype="multipart/form-data">
 
