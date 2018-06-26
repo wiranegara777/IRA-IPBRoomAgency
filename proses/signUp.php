@@ -85,7 +85,7 @@ if(isset($_POST['Submit'])) {
           <br><br>
           Bila ada kesulitan silahkan menghubungi kami
           <br><br>
-          Sampai jumpa di Kampus IPB.";
+          Terima Kasih Sudah Bergabung bersama IRA :3";
           //$mail->Body = preg_replace('/\[\]/','',$pesan);
           $mail->Body = $pesan;
 
