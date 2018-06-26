@@ -42,11 +42,14 @@ if(isset($_POST['Submit'])){
                 }
             else if($res['level'] == 1)
                     $admin=1;
-            
+            else if ($res['level'] == 3)
+                    $admin=2;
              echo '<script language="javascript">alert("Login Successful");</script>'; 
              
              if($admin==1)
                  echo '<script>document.location.href="../admin/index.php";</script>';
+            else if ($admin ==2)
+                echo '<script>document.location.href="../admin_dash.php";</script>';
              else
                  echo '<script>document.location.href="../index.php";</script>';
 

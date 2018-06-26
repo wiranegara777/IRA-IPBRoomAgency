@@ -5,6 +5,7 @@
     include_once("classes/Crud.php");
     include_once("classes/Mahasiswa.php");
     include_once("classes/Admin.php");
+    include_once("classes/Room.php");
 
     if(isset($_SESSION['name'])) {
          $admin = new Admin($_SESSION['id'],$_SESSION['name'],$_SESSION['email'],$_SESSION['phone']);
@@ -20,6 +21,16 @@
     $query = "SELECT * FROM user ORDER BY id DESC";
     $result = $crud->getData($query);
     //echo '<pre>'; print_r($result); exit;
+    $ID = $admin->getId();
+
+    $query = "SELECT * FROM room WHERE id_user =$ID";
+    $result_room = $crud->getData($query);
+    $arr_room = array();
+
+    while($res = mysqli_fetch_array($result_room)) {
+      $room = new Room($res['id_room']);
+      array_push($arr_room,$room);
+    }
 ?>
 <html lang="en">
 <title>Admin Dashboard</title>
@@ -144,55 +155,28 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div>
 
-  <div class="w3-panel">
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-third">
-        <h5>Regions</h5>
-        <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map">
-      </div>
-      <div class="w3-twothird">
-        <h5>Feeds</h5>
-        <table class="w3-table w3-striped w3-white">
-          <tr>
-            <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-            <td>New record, over 90 views.</td>
-            <td><i>10 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-            <td>Database error.</td>
-            <td><i>15 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
-            <td>New record, over 40 users.</td>
-            <td><i>17 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-            <td>New comments.</td>
-            <td><i>25 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
-            <td>Check transactions.</td>
-            <td><i>28 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-            <td>CPU overload.</td>
-            <td><i>35 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-            <td>New shares.</td>
-            <td><i>39 mins</i></td>
-          </tr>
-        </table>
-      </div>
-    </div>
+  <div class="w3-padding">
+    <h5>Your Room</h5>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+      <?php 
+            if (empty($arr_room)){
+                echo "<h1>Anda Tidak Memiliki Ruangan</h1>";
+            } else {
+              for($i = 0; $i<count($arr_room); $i++) {         
+                echo "<tr>";
+                echo "<td>".$arr_room[$i]->getTitle()."</td>";
+                echo "<td>".$arr_room[$i]->getFakultas()."</td>";
+                echo "<td>".$arr_room[$i]->getKapasitas()."</td>";    
+                echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+                echo "</tr>";
+              }
+          }
+            
+      ?>
+    </table><br>
+    <a href="addRoom.php"><button class="w3-button w3-blue">Add Ruangan <i class="fa fa-plus"></i></button></a>
   </div>
-  <hr>
+
   <div class="w3-padding">
     <h5>User</h5>
     <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
@@ -208,6 +192,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </table><br>
     <a href="addRoom.php"><button class="w3-button w3-blue">Add PJ Ruang <i class="fa fa-plus"></i></button></a>
   </div>
+
  </div>
   <hr>
   <div class="w3-container">
