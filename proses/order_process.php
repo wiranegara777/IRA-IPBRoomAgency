@@ -13,7 +13,7 @@
         $date = $_POST['date'];
         $payment = $_POST['payment'];
         $duration = $_POST['duration'];
-        $status = "waiting";
+        $status = "buying";
 
         $year   = strtok($date,'-');
         $month = strtok('-');

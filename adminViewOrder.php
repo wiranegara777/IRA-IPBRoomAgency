@@ -234,6 +234,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                 </div>
               </li>
 
+              <li class="list-group-item">
+                  <div class="row">
+                <div class="col-5">Status</div>
+                <div class="col">:</div>
+                <div class="col-6"><?php echo $order->getStatus(); ?></div>
+                </div>
+              </li>
+
             </ul>
       
             <?php if($order->getBukti() == "null") {?>
@@ -243,6 +251,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                     <h3>Bukti Bayar</h3>
                     <img src="<?php echo $order->getBukti();?>" style="height: 450px;">
             <?php } ?>
+            
+            <h3>Konfirmasi Pembayaran</h3>
+                <a href="proses/updateStatusOrder.php?id=<?php echo $ID_ORDER; ?>"><button class="btn btn-info tombol" type="submit" name="submit" style="margin-top: 10%; margin-left: 55%">Konfirm Pembayaran</button></a>
+
 
       </div>
       
