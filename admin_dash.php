@@ -6,6 +6,8 @@
     include_once("classes/Mahasiswa.php");
     include_once("classes/Admin.php");
     include_once("classes/Room.php");
+    include_once("classes/Order.php");
+    include_once("classes/Pj.php");
 
     if(isset($_SESSION['name'])) {
          $admin = new Admin($_SESSION['id'],$_SESSION['name'],$_SESSION['email'],$_SESSION['phone']);
@@ -31,6 +33,9 @@
       $room = new Room($res['id_room']);
       array_push($arr_room,$room);
     }
+
+    $query = "SELECT * FROM order_room WHERE id_pj = $ID";
+    $result_order = $crud->getData($query);
 ?>
 <html lang="en">
 <title>Admin Dashboard</title>
@@ -175,6 +180,34 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       ?>
     </table><br>
     <a href="addRoom.php"><button class="w3-button w3-blue">Add Ruangan <i class="fa fa-plus"></i></button></a>
+  </div>
+
+  <div class="w3-padding">
+    <h5>Transaction List</h5>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+      <?php 
+            if($result_order->num_rows > 0) {
+              while($res = mysqli_fetch_array($result_order)){
+                  $order = new Order($res['id_order']);
+                  $user = new Mahasiswa($order->getId_user());
+                  $room = new Room($order->getId_room());
+                  $pj = new Pj($order->getId_pj());
+
+                  echo "<tr>";
+                  echo "<td>".$room->getTitle()."</td>";
+                  echo "<td>".$user->getName()."</td>";
+                  echo "<td>".$order->getSum_price()."</td>";
+                  echo "<td>".$order->getTgl()."-".$order->getMonth()."-".$order->getYear()."</td>"; 
+                  echo "<td>".$order->getStatus()."</td>";   
+                //  echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+                  echo "<td><a href='adminViewOrder.php?id=".$order->getId_order()."'><button class='w3-button w3-blue'>View <i class='fa fa-search'></i></button></a></td>";  
+                echo "</tr>";
+              }
+            } else {
+              echo "<h1>Anda tidak memiliki transaksi.</h1>";
+            }
+      ?>
+    </table><br>
   </div>
 
   <div class="w3-padding">
