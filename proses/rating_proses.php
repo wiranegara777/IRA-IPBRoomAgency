@@ -5,14 +5,12 @@
 
         if(isset($_POST['Submit'])){
         
-                $id_user = $crud->escape_string($_POST['id_user']);
-                $id_room = $crud->escape_string($_POST['id_room']);
+            $id_user = $crud->escape_string($_POST['id_user']);
+            $id_room = $crud->escape_string($_POST['id_room']);
           
-                $rating = $crud->escape_string($_POST['rating']);
-                $comment = $crud->escape_string($_POST['comment']);
-            
-            
-            
+            $rating = $crud->escape_string($_POST['rating']);
+            $comment = $crud->escape_string($_POST['comment']);
+                       
             echo $id_user; echo "<br>";
             echo $id_room; echo "<br>";
             echo $rating; echo "<br>";
@@ -23,6 +21,9 @@
               echo "<script>alert('Berhasil menambah Rating !.');</script>
                 <script>document.location.href='javascript:history.go(-1)';</script>";
 
+             } else {
+                echo "<script>alert('Failed Input Rating Rating !.');</script>
+                <script>document.location.href='javascript:history.go(-1)';</script>";
              }   
             
             

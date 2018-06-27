@@ -57,6 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-7">
+                    <h3><?php echo $room->getTitle(); ?> </h3>
                     <!-- cariousel -->
                     <div id="carouselExampleControls" style="width: 100%;" class="span6 carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
@@ -106,8 +107,23 @@
                             <div class="row">
                                 <div class="col-7">
                                     <h3> Rating Average</h3>
-                                    <h3>4.5/5.0</h3>
-                                    <h3 class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h3>
+                                    <?php if($avg_rate == NULL) { ?>
+                                    <h3>Not Rated</h3>
+                                    <?php } else { ?>
+                                    <h3><?php echo round($avg_rate, 2) ?>/5.0</h3>
+                                    <?php } ?>
+                                    
+                                    <?php if($avg_rate >= 5) { ?>
+                                        <h3 class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h3>
+                                    <?php } else if($avg_rate >= 4) {?>
+                                        <h3 class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></h3>
+                                    <?php } else if($avg_rate >= 3) {?>
+                                        <h3 class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></h3>
+                                    <?php } else if($avg_rate >= 2) {?>
+                                        <h3 class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></h3>
+                                    <?php } else  {?>
+                                        <h3 class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></h3>
+                                    <?php } ?>
                                 </div>
 
                                 <div class="col">
@@ -122,30 +138,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <?php 
+                        $query = "SELECT * from rating where id_user = $id_user";  
+                        $result = $crud->getData($query);
+                        if($result->num_rows == 0) {
+                    ?>
                     <!-- FORM RATING -->
                     <div class="card" style="width: 100%;">
                         <div class="card-body">
                             <h5 class="card-title">Berikan Ulasan</h5>
-                            <form>
+                            <form role="form" method="post" action="proses/rating_proses.php" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Rating</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                <option><span>★</span></option>
-                                <option><span>★★</span></option>
-                                <option><span>★★★</span></option>
-                                <option><span>★★★★</span></option>
-                                <option><span>★★★★★</span></option>
+                                <select name="rating" class="form-control" id="exampleFormControlSelect1">
+                                <option value="1"><span>★</span></option>
+                                <option value="2"><span>★★</span></option>
+                                <option value="3"><span>★★★</span></option>
+                                <option value="4"><span>★★★★</span></option>
+                                <option value="5"><span>★★★★★</span></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Ulasan</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="container btn btn-primary">Rate</button>
+                            <input type="hidden" name="id_user" value="<?php echo $id_user; ?>" >
+                            <input type="hidden" name="id_room" value="<?php echo $room->getId_room(); ?>">
+                            <button type="submit" name="Submit" class="container btn btn-primary">Rate</button>
                             </form>
                         </div>
                     </div>
                     <!-- end of rating -->
+                    <?php } ?>
 
                 </div>
                 <!-- end of kiri -->
@@ -160,19 +185,45 @@
                         <!-- RECENT REVIEW -->
                        
                         <div class="row">
-                            <div class="col-sm-3">
+                            
+                            <?php
+                                $id_room = $room->getId_room();  
+                                $query = "SELECT * FROM rating WHERE id_room = $id_room";
+                                $result_ratingList = $crud->getData($query);
+                                if($result_ratingList){
+                                    while($res = mysqli_fetch_array($result_ratingList)){
+                                        $user = new Mahasiswa($res['id_user']);
+                                        $rating = new Rating($res['id_rating']);
+                            ?>
+                            <div class="col-sm-4">
                                 <i class="fa fa-user fa-3x"></i>
-                                <div ><a href="#">Asep</a></div>
-                                <div class="review-block-date">January 29, 2016</div>
+                                <div ><a href="#"><?php echo $user->getName(); ?></a></div>
+                                <!-- <div class="review-block-date">January 29, 2016</div> -->
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <div class="review-block-rate">
+                                        
                                         <h4 class="text-warning">
+                                        <?php if ($rating->getRating() == 5) { ?>
                                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                        <?php } else if ($rating->getRating() == 4) { ?>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+                                        <?php } else if ($rating->getRating() == 3) { ?>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                        <?php } else if ($rating->getRating() == 2) { ?>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                        <?php } else { ?>
+                                            <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                        <?php } ?>
+
                                         </h4>
                                 </div>
-                                <div class="review-block-description">  this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                <div class="review-block-description"> <?php echo $rating->getComment(); ?> </div>
                             </div>
+                            
+                            <?php } ?>
+                         <?php } ?>
+
                         </div>
                      </div>   
                 </div>
