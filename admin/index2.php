@@ -213,33 +213,32 @@
         </div>
       </div>
       <!-- Example DataTables Card-->
+
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> List Order Ruangan</div>
+          <i class="fa fa-table"></i> List User IRA</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Nomor Order</th>
-                  <th>Nama Pelanggan</th>
-                  <th>Nama Ruangan</th>
-                  <th>Status</th>
+                  <th>Nomor ID User</th>
+                  <th>Nama User</th>
+                  <th>Email User </th>
+                  <th>NIM User</th>
+                  <th>Departemen User</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  while($res = mysqli_fetch_array($result2)) { 
-                    $order = new Order($res['id_order']);
-                    $user = new Mahasiswa($order->getId_user());
-                    $room = new Room($order->getId_room());
-                    $pj = new Pj($order->getId_pj());
-
+                  while($res = mysqli_fetch_array($result)) { 
+                
                     echo "<tr>";
-                      echo "<td>" .$order->getId_order()."</td>";
-                      echo "<td>" .$user->getName()."</td>";
-                      echo "<td>" .$room->getTitle()."</td>";
-                      echo "<td>" .$order->getStatus()."</td>";
+                      echo "<td>" .$res['id']."</td>";
+                      echo "<td>" .$res['name']."</td>";
+                      echo "<td>" .$res['email']."</td>";
+                      echo "<td>" .$res['nim']."</td>";
+                      echo "<td>" .$res['departemen']."</td>";
                     echo "</tr>";
                   }
                 ?>
@@ -248,6 +247,12 @@
           </div>
         </div>
       </div>
+
+
+    
+         
+            
+              
             
            
     <!-- /.container-fluid-->

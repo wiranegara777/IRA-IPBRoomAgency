@@ -215,31 +215,29 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> List Order Ruangan</div>
+          <i class="fa fa-table"></i> List Ruangan IRA</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Nomor Order</th>
-                  <th>Nama Pelanggan</th>
+                  <th>Nomor ID Ruangan</th>
                   <th>Nama Ruangan</th>
-                  <th>Status</th>
+                  <th>Alamat Ruangan </th>
+                  <th>Fakultas</th>
+                  <th>Fasilitas</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  while($res = mysqli_fetch_array($result2)) { 
-                    $order = new Order($res['id_order']);
-                    $user = new Mahasiswa($order->getId_user());
-                    $room = new Room($order->getId_room());
-                    $pj = new Pj($order->getId_pj());
-
+                  while($res = mysqli_fetch_array($result3)) { 
+                
                     echo "<tr>";
-                      echo "<td>" .$order->getId_order()."</td>";
-                      echo "<td>" .$user->getName()."</td>";
-                      echo "<td>" .$room->getTitle()."</td>";
-                      echo "<td>" .$order->getStatus()."</td>";
+                      echo "<td>" .$res['id_room']."</td>";
+                      echo "<td>" .$res['title']."</td>";
+                      echo "<td>" .$res['address']."</td>";
+                      echo "<td>" .$res['fakultas']."</td>";
+                      echo "<td>" .$res['fasilitas']."</td>";
                     echo "</tr>";
                   }
                 ?>
@@ -248,6 +246,11 @@
           </div>
         </div>
       </div>
+
+    
+         
+            
+              
             
            
     <!-- /.container-fluid-->
