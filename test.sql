@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jun 2018 pada 15.52
+-- Waktu pembuatan: 27 Jun 2018 pada 16.20
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 5.6.35
 
@@ -174,7 +174,13 @@ INSERT INTO `room` (`id_room`, `id_user`, `title`, `body`, `address`, `image`, `
 (18, 27, 'Ruangan RK X 301', '<p>Ruangan Ini Sangat nyaman untuk seluruh kegiatan</p>\r\n', 'Node X Fahutan', 'img/062720180211pm.jpg', -6.558067, 106.730156, 100000, 'img/class_room2.jpg', 'img/class_room3.jpg', 'FAHUTAN', 'AC, Proyektor, Kursi, Speaker', 40),
 (19, 27, 'Ruangan RK X 302', '<p>Nyaman untuk segala kegiatan perkuliahan</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180217pm.jpg', -6.557956, 106.730064, 150000, 'img/class_room3.jpg', 'img/class_room1.jpg', 'FAHUTAN', 'AC, Proyektor, Kursi, Speaker', 40),
 (20, 28, 'AUDITORIUM DECUL', '<p>A Very Luxurious Auditorium in Indonesia, we provide the best facilities</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180225pm.jpg', -6.564698, 106.732491, 3000000, 'img/audit2.JPG', 'img/audit3.jpg', 'AUDIT', 'AC, Proyektor, Kursi, Speaker, Kursi Pijat, Lounge Makan', 5000),
-(21, 28, 'AUDITORIUM DEMIT', '<p>The Auditorium for Demit only</p>\r\n', 'Jl. Raya Dramaga Kampus IPB Dramaga Bogor 16680 West Java, Indonesia', 'img/062720180234pm.jpg', -6.561628, 106.732147, 3000000, 'img/audit3.jpg', 'img/audit2.JPG', 'AUDIT', 'AC, Proyektor, Kursi, Speaker, Kursi Pijat, Lounge Makan', 5000);
+(21, 28, 'AUDITORIUM DEMIT', '<p>The Auditorium for Demit only</p>\r\n', 'Jl. Raya Dramaga Kampus IPB Dramaga Bogor 16680 West Java, Indonesia', 'img/062720180234pm.jpg', -6.561628, 106.732147, 3000000, 'img/audit3.jpg', 'img/audit2.JPG', 'AUDIT', 'AC, Proyektor, Kursi, Speaker, Kursi Pijat, Lounge Makan', 5000),
+(22, 28, 'RK PINUS 2', '', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180406pm.jpg', -6.563081, 106.735069, 50000, 'img/class_room1.jpg', 'img/', 'FAPERTA', 'AC, Proyektor, Kursi, Speaker', 100),
+(23, 28, 'RK KUCING MEONG', '<p>Ruangannya bagus meongggg</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180407pm.jpg', -6.562058, 106.735069, 40000, 'img/', 'img/', 'FKH', 'AC, Proyektor, Kursi, Speaker', 100),
+(24, 28, 'RK EKONOMI', '<p>Ruangan penuh ke ekonomisan</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180408pm.jpg', -6.564445, 106.732666, 150000, 'img/', 'img/', 'FEM', 'AC, Proyektor, Kursi, Speaker', 500),
+(25, 28, 'GOR LAMA', '<p>Gymnasium sangat lengkap segala cabang olahraga ada</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180410pm.jpg', -6.563422, 106.731293, 250000, 'img/', 'img/', 'GYMNASIUM', 'LENGKAP', 5000),
+(26, 28, 'RK HIU', '<p>Banyak hiu nya hiii</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180418pm.jpg', -6.565468, 106.734039, 100000, 'img/', 'img/', 'FPIK', 'AC, Proyektor, Kursi, Speaker', 1000),
+(27, 28, 'RK CAKEP ', '<p>FEMA LANTAI 2</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180419pm.jpg', -6.564786, 106.734039, 15000, 'img/', 'img/', 'FEMA', 'AC, Proyektor, Kursi, Speaker', 50);
 
 -- --------------------------------------------------------
 
@@ -275,7 +281,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT untuk tabel `room`
 --
 ALTER TABLE `room`
-  MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
