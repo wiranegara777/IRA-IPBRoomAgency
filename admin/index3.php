@@ -19,9 +19,8 @@
     }
     $crud = new Crud();
 
-    $ID = $admin->getId();
-
-    $query_room = "SELECT * FROM room WHERE id_user =$ID";
+    
+    $query_room = "SELECT * FROM room ";
     $result_room = $crud->getData($query_room);
     $arr_room = array();
 

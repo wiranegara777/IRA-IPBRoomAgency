@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2018 at 04:39 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Waktu pembuatan: 27 Jun 2018 pada 15.52
+-- Versi server: 10.1.31-MariaDB
+-- Versi PHP: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `message`
+-- Struktur dari tabel `message`
 --
 
 CREATE TABLE `message` (
@@ -38,7 +38,7 @@ CREATE TABLE `message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `message`
+-- Dumping data untuk tabel `message`
 --
 
 INSERT INTO `message` (`id_message`, `id_user`, `id_pj`, `conversation`, `dates`, `sender`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `message` (`id_message`, `id_user`, `id_pj`, `conversation`, `dates`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_room`
+-- Struktur dari tabel `order_room`
 --
 
 CREATE TABLE `order_room` (
@@ -93,28 +93,20 @@ CREATE TABLE `order_room` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `order_room`
+-- Dumping data untuk tabel `order_room`
 --
 
 INSERT INTO `order_room` (`id_order`, `id_room`, `id_user`, `id_pj`, `sum_price`, `duration`, `date`, `month`, `year`, `payment`, `status`, `bukti`, `dateCreated`) VALUES
-(1, 3, 10, 10, 18000, 3, 17, 3, 2018, 1, 'buying', 'null', '2018-06-26 07:13:58'),
-(2, 6, 10, 10, 16000, 2, 19, 3, 2018, 1, 'buying', 'null', '2018-05-04 12:46:58'),
-(4, 3, 3, 10, 12000, 2, 2, 4, 2018, 1, 'buying', 'img/062620180845am.jpeg', '2018-06-26 07:14:02'),
-(5, 1, 3, 10, 4000, 2, 28, 3, 2018, 1, 'buying', 'null', '2018-05-04 12:47:27'),
-(6, 8, 3, 10, 54000, 6, 14, 4, 2018, 2, 'buying', 'null', '2018-06-26 07:14:07'),
-(7, 9, 11, 10, 3000, 3, 17, 4, 2018, 1, 'buying', 'null', '2018-06-26 07:14:16'),
-(8, 1, 3, 10, 4000, 2, 12, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:20'),
-(9, 3, 3, 10, 18000, 3, 24, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:25'),
-(10, 2, 3, 10, 5000, 1, 1, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:30'),
-(11, 2, 3, 10, 15000, 3, 16, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:35'),
-(12, 3, 3, 10, 12000, 2, 8, 5, 2018, 1, 'buying', 'null', '2018-06-26 07:14:39'),
 (13, 1, 24, 10, 4000, 2, 12, 6, 2018, 1, 'buying', 'null', '2018-06-26 07:14:43'),
-(14, 16, 3, 12, 100000, 2, 13, 6, 2018, 2, 'finish', 'img/062620180856am.jpeg', '2018-06-26 07:18:46');
+(15, 20, 31, 28, 3000000, 1, 30, 6, 2018, 2, 'finish', 'img/062720180243pm.png', '2018-06-27 12:43:47'),
+(16, 21, 31, 28, 30000000, 10, 27, 6, 2018, 1, 'finish', 'null', '2018-06-27 13:03:55'),
+(17, 11, 32, 10, 250000, 5, 12, 6, 2018, 2, 'buying', 'null', '2018-06-27 13:49:49'),
+(18, 5, 32, 10, 700000, 100, 0, 0, 0, 2, 'buying', 'null', '2018-06-27 13:50:44');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rating`
+-- Struktur dari tabel `rating`
 --
 
 CREATE TABLE `rating` (
@@ -126,7 +118,7 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rating`
+-- Dumping data untuk tabel `rating`
 --
 
 INSERT INTO `rating` (`id_rating`, `id_user`, `id_room`, `rating`, `comment`) VALUES
@@ -134,12 +126,13 @@ INSERT INTO `rating` (`id_rating`, `id_user`, `id_room`, `rating`, `comment`) VA
 (2, 10, 2, 3, 'hhaaa'),
 (3, 10, 1, 4, 'hehehe'),
 (4, 10, 1, 4, 'hehehe'),
-(5, 10, 1, 2, 'hehehe');
+(5, 10, 1, 2, 'hehehe'),
+(6, 31, 18, 5, 'The Room is very clean and comfy');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `room`
+-- Struktur dari tabel `room`
 --
 
 CREATE TABLE `room` (
@@ -160,7 +153,7 @@ CREATE TABLE `room` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `room`
+-- Dumping data untuk tabel `room`
 --
 
 INSERT INTO `room` (`id_room`, `id_user`, `title`, `body`, `address`, `image`, `lat`, `lng`, `price`, `image2`, `image3`, `fakultas`, `fasilitas`, `kapasitas`) VALUES
@@ -177,12 +170,16 @@ INSERT INTO `room` (`id_room`, `id_user`, `title`, `body`, `address`, `image`, `
 (14, 2, 'RK.X30455', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180122am.jpg', -6.598461, 106.702110, 1000, 'img/043020180122am.jpg', 'img/043020180122am.jpg', 'dasd', 'sad', 30),
 (15, 2, 'RKRKRKR', '<p>dfgdgg</p>\r\n', 'dasd', 'img/043020180127am.jpg', -6.639385, 106.561005, 1000, 'img/social_share_room.jpg', 'img/DeluxeSuite_FINAL_large.jpg', 'dasd', 'sad', 30),
 (16, 12, 'raungan1', '<p>sfsdfsdfdffsdfdfssdfsdfsdfsdf</p>\r\n', 'asdasdas', 'img/062620180350am.jpg', -6.596755, 106.802017, 50000, 'img/gorengan.jpg', 'img/gorengan.jpg', 'FMIPA', 'asddadsd', 200),
-(17, 12, 'Ruangan 2', '<p>QWERTTASDFSFSGDFHFGJGHKZXCZXVXCBCVMNVBM,SDFSDGHFDHCVBNCBSDFGWERGSDGW</p>\r\n', 'Jalan Raya dramaga wing 2', 'img/062620180146pm.jpg', -6.559010, 106.730530, 40000, 'img/gorengan.jpg', 'img/gorengan.jpg', 'FAPET', 'AC, Proyektor, Kursi', 150);
+(17, 12, 'Ruangan 2', '<p>QWERTTASDFSFSGDFHFGJGHKZXCZXVXCBCVMNVBM,SDFSDGHFDHCVBNCBSDFGWERGSDGW</p>\r\n', 'Jalan Raya dramaga wing 2', 'img/062620180146pm.jpg', -6.559010, 106.730530, 40000, 'img/gorengan.jpg', 'img/gorengan.jpg', 'FAPET', 'AC, Proyektor, Kursi', 150),
+(18, 27, 'Ruangan RK X 301', '<p>Ruangan Ini Sangat nyaman untuk seluruh kegiatan</p>\r\n', 'Node X Fahutan', 'img/062720180211pm.jpg', -6.558067, 106.730156, 100000, 'img/class_room2.jpg', 'img/class_room3.jpg', 'FAHUTAN', 'AC, Proyektor, Kursi, Speaker', 40),
+(19, 27, 'Ruangan RK X 302', '<p>Nyaman untuk segala kegiatan perkuliahan</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180217pm.jpg', -6.557956, 106.730064, 150000, 'img/class_room3.jpg', 'img/class_room1.jpg', 'FAHUTAN', 'AC, Proyektor, Kursi, Speaker', 40),
+(20, 28, 'AUDITORIUM DECUL', '<p>A Very Luxurious Auditorium in Indonesia, we provide the best facilities</p>\r\n', 'Jl. Raya Dramaga  Kampus IPB Dramaga Bogor  16680 West Java, Indonesia', 'img/062720180225pm.jpg', -6.564698, 106.732491, 3000000, 'img/audit2.JPG', 'img/audit3.jpg', 'AUDIT', 'AC, Proyektor, Kursi, Speaker, Kursi Pijat, Lounge Makan', 5000),
+(21, 28, 'AUDITORIUM DEMIT', '<p>The Auditorium for Demit only</p>\r\n', 'Jl. Raya Dramaga Kampus IPB Dramaga Bogor 16680 West Java, Indonesia', 'img/062720180234pm.jpg', -6.561628, 106.732147, 3000000, 'img/audit3.jpg', 'img/audit2.JPG', 'AUDIT', 'AC, Proyektor, Kursi, Speaker, Kursi Pijat, Lounge Makan', 5000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -199,87 +196,92 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `nim`, `phone`, `departemen`, `level`, `fakultas`, `angkatan`) VALUES
 (2, 'Furqan', 'furqan@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G641500589', '', 'FEM', 1, '', ''),
-(3, 'Sultanzz', 'sultan@sultan.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G6450087', '', 'Ilkom', 2, '', ''),
 (10, 'wira', 'muhammadwiranegara777@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G64150058', '', 'Ilkom', 1, '', ''),
 (11, 'ira', 'ipbroomagency@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'g641', '', 'G6', 2, '', ''),
 (12, 'Wira ganteng', 'haha@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '0812', '', 3, '', ''),
 (13, 'Wira ganteng 2', 'haha2@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '0812', '', 3, '', ''),
 (21, 'weeaw', 'aa@ddd.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '123456', '', 3, '', ''),
 (24, 'Muhammad Wiranegara Girinata', 'wiranegara_777@apps.ipb.ac.id', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G64150058', '35235234623', 'Ilmu Komputer', 2, 'FMIPA', '2015'),
-(25, 'm luthfir', 'm.luthfirrahman97@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'g56315263', '08937843', 'Ilmu Komputer', 2, 'FMIPA', '2015');
+(25, 'm luthfir', 'm.luthfirrahman97@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'g56315263', '08937843', 'Ilmu Komputer', 2, 'FMIPA', '2015'),
+(27, 'Saepul Jamilloo', 'saipul@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '08756548684856', '', 3, '', ''),
+(28, 'Lionel Messi', 'leomessi@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '0878095465454654', '', 3, '', ''),
+(29, 'Lionel Messi', 'leomessi@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '', '0878095465454654', '', 3, '', ''),
+(31, 'Muhammad Luthfir Rahman', 'muhammad_luthfirrahman@apps.ipb.ac.id', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G64150028', '', 'Ilmu Komputer', 2, '', ''),
+(32, 'zenmobius', 'zenmobius@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G641500123123', '', '454684654565', 2, '', ''),
+(33, 'zenmobius', 'zenmobius@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'G641500123123', '', '454684654565', 2, '', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `message`
+-- Indeks untuk tabel `message`
 --
 ALTER TABLE `message`
   ADD PRIMARY KEY (`id_message`);
 
 --
--- Indexes for table `order_room`
+-- Indeks untuk tabel `order_room`
 --
 ALTER TABLE `order_room`
   ADD PRIMARY KEY (`id_order`);
 
 --
--- Indexes for table `rating`
+-- Indeks untuk tabel `rating`
 --
 ALTER TABLE `rating`
   ADD PRIMARY KEY (`id_rating`);
 
 --
--- Indexes for table `room`
+-- Indeks untuk tabel `room`
 --
 ALTER TABLE `room`
   ADD PRIMARY KEY (`id_room`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `message`
+-- AUTO_INCREMENT untuk tabel `message`
 --
 ALTER TABLE `message`
   MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `order_room`
+-- AUTO_INCREMENT untuk tabel `order_room`
 --
 ALTER TABLE `order_room`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `rating`
+-- AUTO_INCREMENT untuk tabel `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `room`
+-- AUTO_INCREMENT untuk tabel `room`
 --
 ALTER TABLE `room`
-  MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_room` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

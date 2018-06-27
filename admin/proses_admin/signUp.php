@@ -91,7 +91,7 @@ if(isset($_POST['Submit'])) {
           else { // $result3=mysqli_multi_query($con,$sql3);
                 $crud->execute("INSERT INTO user(name,nim,email,password,departemen,level) VALUES('$name','$nim','$email','$password','$departemen',2)");
                 echo "<script>alert('Berhasil mendaftar sebagai peserta! Silahkan cek email anda.');
-                document.location.href='index.php';</script>";
+                document.location.href='../index.php';</script>";
             }
     
     }
