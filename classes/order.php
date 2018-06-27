@@ -103,6 +103,14 @@
             return $result;
         }
 
+        public function deleteOrderByRoom($id_room) {
+            $crud = new Crud();
+
+            $result = $crud->execute("DELETE FROM order_room WHERE id_room=$id_room");
+
+            return $result;
+        }
+
     }
 
 ?>

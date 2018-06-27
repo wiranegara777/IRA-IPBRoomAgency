@@ -125,5 +125,13 @@
             return $result;
         }
 
+        public function deleteRoom($id_room) {
+            $crud = new Crud();
+
+            $result = $crud->execute("DELETE FROM room WHERE id_room=$id_room");
+
+            return $result;
+        }
+
     }
 ?>
