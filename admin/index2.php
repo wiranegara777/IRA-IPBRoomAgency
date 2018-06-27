@@ -18,7 +18,16 @@
         echo '<script>document.location.href="../login.php";</script>';
     }
     $crud = new Crud();
-     
+  
+    $query_user = "SELECT * FROM user";
+    $result_user = $crud->getData($query_user);
+    $arr_user = array();
+
+    while($res2 = mysqli_fetch_array($result_user)) {
+      $user = new Mahasiswa($res2['id']);
+      array_push($arr_user,$user);
+    }
+
     //fetching data in descending order (lastest entry first)
     $query = "SELECT * FROM user ORDER BY id DESC";
     $query2 = "SELECT * FROM order_room ORDER BY id_order DESC";
@@ -227,20 +236,26 @@
                   <th>Email User </th>
                   <th>NIM User</th>
                   <th>Departemen User</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  while($res = mysqli_fetch_array($result)) { 
-                
+                if (empty($arr_user)){
+                echo "<h1>Anda Tidak Memiliki User</h1>";
+                }
+                else{
+                  for($i = 0; $i<count($arr_user); $i++) { 
                     echo "<tr>";
-                      echo "<td>" .$res['id']."</td>";
-                      echo "<td>" .$res['name']."</td>";
-                      echo "<td>" .$res['email']."</td>";
-                      echo "<td>" .$res['nim']."</td>";
-                      echo "<td>" .$res['departemen']."</td>";
+                      echo "<td>" .$arr_user[$i]->getId()."</td>";
+                      echo "<td>" .$arr_user[$i]->getName()."</td>";
+                      echo "<td>" .$arr_user[$i]->getEmail()."</td>";
+                      echo "<td>" .$arr_user[$i]->getNim()."</td>";
+                      echo "<td>" .$arr_user[$i]->getDepartemen()."</td>";
+                      echo "<td><a href='proses_admin/adminDeleteUser.php?id=" .$arr_user[$i]->getId()."' onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
                     echo "</tr>";
                   }
+                }
                 ?>
               </tbody>
             </table>

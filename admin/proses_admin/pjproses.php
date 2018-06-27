@@ -40,7 +40,7 @@
             else{
                $pj -> insertPj($name, $email, $phone, $password);
                 echo "<script>alert('Berhasil mendaftar sebagai PJ Ruangan !.');
-                document.location.href='index.php';</script>";
+                document.location.href='../index.php';</script>";
 
             } 
 

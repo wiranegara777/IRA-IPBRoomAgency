@@ -225,6 +225,7 @@
                   <th>Nama Pelanggan</th>
                   <th>Nama Ruangan</th>
                   <th>Status</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -234,12 +235,13 @@
                     $user = new Mahasiswa($order->getId_user());
                     $room = new Room($order->getId_room());
                     $pj = new Pj($order->getId_pj());
-
+                    
                     echo "<tr>";
                       echo "<td>" .$order->getId_order()."</td>";
                       echo "<td>" .$user->getName()."</td>";
                       echo "<td>" .$room->getTitle()."</td>";
                       echo "<td>" .$order->getStatus()."</td>";
+                      echo "<td><a href='proses_admin/adminDeleteOrder.php?id_order=".$order->getId_order()."' onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
                     echo "</tr>";
                   }
                 ?>
