@@ -33,7 +33,7 @@ else
         <table width="25%" border="0">
             <tr> 
                 <td>Chat</td>
-                <td><input type="text" name="conversation"></td>
+                <td><textarea style="height:100px; width:300px;" name="conversation" placeholder="Enter Message"></textarea></td>
             </tr>
             <td><input type="hidden" name="user1" value="<?php echo $id;?>"></td>
             <td><input type="hidden" name="user2" value="<?php echo $id_pj;?>"></td>

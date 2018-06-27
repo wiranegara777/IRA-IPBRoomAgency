@@ -34,16 +34,18 @@
               while($res = mysqli_fetch_array($result)) {
                   if($res['sender'] == 1){
             ?>
-                <p style="color:red;"> <?php echo $user->getName(); ?> </p>
+            <li>
+                <p style="color:red;"><b> <?php echo $user->getName(); ?> </b></p>
                 <p> <?php echo $res['conversation'] ?> </p>
-                <p> <?php echo $res['dates']; ?> </p>
+                <p style="font-size:11px;"> <?php echo $res['dates']; ?> </p>
+            </li>
             <?php
                   } else {
         ?>
             <li>
-                <p> <?php echo $pj->getName(); ?> </p>
+                <p><b> <?php echo $pj->getName(); ?> </b></p>
                 <p> <?php echo $res['conversation'] ?> </p>
-                <p> <?php echo $res['dates']; ?> </p>
+                <p style="font-size:11px;"> <?php echo $res['dates']; ?> </p>
             </li>
         <?php }
             //end of sender checker 
