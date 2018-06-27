@@ -81,7 +81,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="admin_dash.php" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="admin_dash.php" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
     <a href="adminListMessage.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Message</a>
     <a href="proses/logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out-alt" aria-hidden="true"></i> logout </a>
   </div>
@@ -106,6 +106,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             if (empty($arr_room)){
                 echo "<h1>Anda Tidak Memiliki Ruangan</h1>";
             } else {
+                echo "<tr>";
+                echo "<td><b> Title </b></td>";
+                echo "<td><b> Fakultas </b></td>";
+                echo "<td><b> Kapasitas </b></td>";
+                echo "<td><b> Action </b></td>";
+                echo "</tr>";
               for($i = 0; $i<count($arr_room); $i++) {         
                 echo "<tr>";
                 echo "<td>".$arr_room[$i]->getTitle()."</td>";
@@ -127,6 +133,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
       <?php 
             if($result_order->num_rows > 0) {
+              echo "<tr>";
+              echo "<td><b> Ruangan </b></td>";
+              echo "<td><b> Peminjam </b></td>";
+              echo "<td><b> SumPrice </b></td>";
+              echo "<td><b> TglPinjam </b></td>";
+              echo "<td><b> Status </b></td>";
+              echo "</tr>";
               while($res = mysqli_fetch_array($result_order)){
                   $order = new Order($res['id_order']);
                   $user = new Mahasiswa($order->getId_user());
