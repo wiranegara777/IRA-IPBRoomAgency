@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jun 2018 pada 16.20
+-- Waktu pembuatan: 28 Jun 2018 pada 03.33
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 5.6.35
 
@@ -101,7 +101,10 @@ INSERT INTO `order_room` (`id_order`, `id_room`, `id_user`, `id_pj`, `sum_price`
 (15, 20, 31, 28, 3000000, 1, 30, 6, 2018, 2, 'finish', 'img/062720180243pm.png', '2018-06-27 12:43:47'),
 (16, 21, 31, 28, 30000000, 10, 27, 6, 2018, 1, 'finish', 'null', '2018-06-27 13:03:55'),
 (17, 11, 32, 10, 250000, 5, 12, 6, 2018, 2, 'buying', 'null', '2018-06-27 13:49:49'),
-(18, 5, 32, 10, 700000, 100, 0, 0, 0, 2, 'buying', 'null', '2018-06-27 13:50:44');
+(18, 5, 32, 10, 700000, 100, 0, 0, 0, 2, 'buying', 'null', '2018-06-27 13:50:44'),
+(19, 22, 31, 28, 50000, 1, 29, 6, 2018, 1, 'buying', 'img/062820180321am.jpg', '2018-06-28 01:21:54'),
+(20, 23, 31, 28, 160000, 4, 27, 6, 2018, 1, 'buying', 'img/062820180323am.jpg', '2018-06-28 01:23:34'),
+(21, 25, 31, 28, 250000, 1, 7, 7, 2018, 1, 'buying', 'img/062820180324am.jpg', '2018-06-28 01:24:46');
 
 -- --------------------------------------------------------
 
@@ -158,7 +161,6 @@ CREATE TABLE `room` (
 
 INSERT INTO `room` (`id_room`, `id_user`, `title`, `body`, `address`, `image`, `lat`, `lng`, `price`, `image2`, `image3`, `fakultas`, `fasilitas`, `kapasitas`) VALUES
 (1, 10, 'RK.X303', '<p>assahsa</p>\r\n', 'sa', 'img/032120180303pm.png', -6.599825, 106.801331, 2000, 'img/032720180124am.png', 'img/032720180124am.png', 'FMIPA', 'AC,proyektor,Kursi', 200),
-(2, 10, 'Audit Mandiri', '<p>asjfhbskjf</p>\r\n', 'djkaszd', 'img/032120180306pm.jpg', -6.600848, 106.803047, 5000, 'img/032720180124am.png', 'img/032720180124am.png', 'FAHUTAN', 'AC,proyektor,Kursi', 200),
 (3, 10, 'Audit PPKU', '<p>ini adlah sesuatu yang harus dilupakan olehmu nak ahaha</p>\r\n', 'Bogor Agricultural', 'img/032720180124am.png', -6.596414, 106.799614, 6000, 'img/032720180124am.png', 'img/032720180124am.png', 'FAHUTAN', 'AC,proyektor,Kursi', 200),
 (5, 10, 'RK.U201', '<p>Midtrans are the</p>\r\n', 'Jakarta', 'img/032920180700pm.PNG', -6.596909, 106.797173, 7000, 'img/032720180124am.png', 'img/032720180124am.png', 'FATETA', 'AC,proyektor,Kursi', 200),
 (6, 10, 'FAC.207', '<p>adasdasd</p>\r\n', 'asdasd', 'img/032920180704pm.jpg', -6.561651, 106.769745, 8000, 'img/032720180124am.png', 'img/032720180124am.png', 'FMIPA', 'AC,proyektor,Kursi', 200),
@@ -269,7 +271,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT untuk tabel `order_room`
 --
 ALTER TABLE `order_room`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `rating`
