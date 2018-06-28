@@ -1,7 +1,8 @@
 <!-- Including jQuery is required. -->
  
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
- 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
  <!-- Including our scripting file. -->
 
  <script type="text/javascript" src="script.js"></script>
@@ -38,7 +39,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <?php echo $Mahasiswa->getName(); ?> <i class="fas fa-user"></i>
+         <?php echo $Mahasiswa->getName(); ?> <i class="material-icons">account_circle</i>
         </a>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
