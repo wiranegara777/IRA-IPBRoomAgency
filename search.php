@@ -37,6 +37,8 @@
 <html lang="en">
 <head>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
         @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");

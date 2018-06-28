@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!--  bootstrap js -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -140,7 +140,7 @@
                     </div>
 
                     <?php 
-                        $query = "SELECT * from rating where id_user = $id_user";  
+                        $query = "SELECT * from rating where id_user = $id_user and id_room = $id";  
                         $result = $crud->getData($query);
                         if($result->num_rows == 0) {
                     ?>

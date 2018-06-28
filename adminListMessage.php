@@ -38,6 +38,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
@@ -147,7 +149,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                  <a href='adminMessage.php?id_pj=<?php echo $id;?>' class="list-group-item" style="color: #008B8B;">
                    <div class="row justify-content-center" style="width: 100%; margin-left: 12px;">
                         <div class="col-1">
-                            <i class="fas fa-user fa-3x" style="color: #008B8B;"></i>
+                        <i class="material-icons">account_circle</i>
                             </div>
                             <div class="col-11" >
                               <div class="container" style="padding-left: 7px;">

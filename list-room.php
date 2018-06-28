@@ -20,7 +20,14 @@ $crud = new Crud();
  
 //fetching user with DESC order
 $query = "SELECT * FROM room WHERE fakultas = '$fakultas'";
-$result = $crud->getData($query);
+$result_room = $crud->getData($query);
+
+$arr_room = array();
+
+    while($res = mysqli_fetch_array($result_room)) {
+      $room = new Room($res['id_room']);
+      array_push($arr_room,$room);
+    }
 
 ?>
 <!DOCTYPE html>
@@ -79,19 +86,19 @@ $result = $crud->getData($query);
             </div>
             <div class="col-md-10 offset-md-1 row-block">
                 <ul id="sortable">
-                    <?php while($res = mysqli_fetch_array($result)) {   ?>
+               <?php for($i = 0; $i<count($arr_room); $i++) { ?>         
                      <li><div class="media">
                             <div class="media-body">
-                                <h4> <?php echo $res['title']; ?> </h4>
+                                <h4> <?php echo $arr_room[$i]->getTitle(); ?> </h4>
                             </div>
                             <div class="media-right align-self-center">
-                                <a href="baru.php?id=<?php echo $res['id_room']; ?>" class="btn btn-default">Lihat Detail</a>
+                                <a href="baru.php?id=<?php echo $arr_room[$i]->getId_room(); ?>" class="btn btn-default">Lihat Detail</a>
                             </div>
                            
                      </div></li>      
                     <?php } ?>
                      <!-- if there is no room -->
-                     <?php if($result->num_rows <= 0)
+                   <?php if (empty($arr_room))
                           echo "<center><h4> Ruangan Belum Tersedia </h4></center>"; ?>
                 </ul>
                 
